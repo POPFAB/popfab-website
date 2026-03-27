@@ -256,8 +256,8 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <Link
-                  href={plan.isEnterprise ? '/about' : '/developers'}
+                <a
+                  href={plan.isEnterprise ? '/about' : 'https://developers.popfab.io'}
                   className={`w-full py-2.5 rounded-xl font-semibold text-sm text-center transition-all block ${
                     plan.isPopular
                       ? 'bg-white text-[#4361ee] hover:bg-white/90'
@@ -267,7 +267,7 @@ export default function PricingPage() {
                   }`}
                 >
                   {plan.ctaLabel}
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -439,9 +439,9 @@ export default function PricingPage() {
             No credit card. No sales call. No waiting. Your sandbox is ready in 60 seconds.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/developers" className="bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-4 rounded-xl font-semibold transition-colors">
+            <a href="https://developers.popfab.io" className="bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-4 rounded-xl font-semibold transition-colors">
               Start Building Free
-            </Link>
+            </a>
             <Link href="/about" className="border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/5 transition-colors">
               Talk to Sales
             </Link>

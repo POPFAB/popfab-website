@@ -413,9 +413,9 @@ export default function ProvidersPage() {
             One integration. All providers. Automatic failover included.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/developers" className="bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-4 rounded-xl font-semibold transition-colors">
+            <a href="https://developers.popfab.io" className="bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-4 rounded-xl font-semibold transition-colors">
               Start Building Free
-            </Link>
+            </a>
             <Link href="/pricing" className="border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/5 transition-colors">
               View Pricing
             </Link>

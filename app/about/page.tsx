@@ -228,9 +228,9 @@ export default function AboutPage() {
             Start with a free sandbox. No credit card. No demo required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/developers" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
+            <a href="https://developers.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
               Start Building Free
-            </Link>
+            </a>
             <Link href="/pricing" className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors">
               See Pricing
             </Link>

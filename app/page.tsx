@@ -71,12 +71,12 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Link
-              href="/developers"
+            <a
+              href="https://developers.popfab.io"
               className="bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-4 rounded-xl text-base font-semibold transition-all duration-200 shadow-lg shadow-[#4361ee]/30 hover:shadow-xl hover:-translate-y-0.5"
             >
               Start Building Free →
-            </Link>
+            </a>
             <Link
               href="#product"
               className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-xl text-base font-semibold transition-all duration-200 hover:bg-white/5"
@@ -430,9 +430,9 @@ export default function HomePage() {
                   ))}
                   <span className="bg-[#06b6d4]/20 text-[#06b6d4] text-xs font-medium px-3 py-1.5 rounded-full">OpenAPI spec</span>
                 </div>
-                <Link href="/developers" className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#06b6d4] transition-colors">
+                <a href="https://developers.popfab.io" className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#06b6d4] transition-colors">
                   Read the docs →
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -602,15 +602,15 @@ export default function HomePage() {
               ))}
 
               <div className="pt-4">
-                <Link
-                  href="/developers"
+                <a
+                  href="https://developers.popfab.io"
                   className="bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-4 rounded-xl font-semibold transition-colors inline-flex items-center gap-2"
                 >
                   Start Building — free in sandbox
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -677,12 +677,12 @@ export default function HomePage() {
             Join Nigerian businesses processing billions in naira with POPFAB. Sandbox is free. Production is fast.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/developers"
+            <a
+              href="https://developers.popfab.io"
               className="bg-[#4361ee] hover:bg-[#3451de] text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-200 shadow-lg shadow-[#4361ee]/30 hover:-translate-y-0.5"
             >
               Start Building Free →
-            </Link>
+            </a>
             <Link
               href="/pricing"
               className="border border-white/20 hover:border-white/40 text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-200 hover:bg-white/5"

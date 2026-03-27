@@ -346,12 +346,12 @@ export default function DevelopersPage() {
               </div>
 
               <div className="flex gap-4">
-                <Link
-                  href="/developers"
+                <a
+                  href="https://developers.popfab.io"
                   className="bg-[#4361ee] hover:bg-[#3451de] text-white px-6 py-3 rounded-xl font-semibold transition-colors"
                 >
                   Get API Key
-                </Link>
+                </a>
                 <a
                   href="#docs"
                   className="border border-white/20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/5 transition-colors"
@@ -547,9 +547,9 @@ export default function DevelopersPage() {
             60 seconds from now, you could have your first test payment running.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/developers" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
+            <a href="https://developers.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
               Get API Key — free
-            </Link>
+            </a>
             <a href="#docs" className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors">
               Browse API Reference
             </a>

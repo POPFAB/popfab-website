@@ -56,18 +56,24 @@ export default function Navigation() {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link
-              href="/developers"
+            <a
+              href="https://developers.popfab.io"
               className="text-white/70 hover:text-white text-sm font-medium transition-colors duration-200"
             >
               View Docs
-            </Link>
-            <Link
-              href="/developers"
+            </a>
+            <a
+              href="https://app.popfab.io"
+              className="text-white/70 hover:text-white text-sm font-medium transition-colors duration-200"
+            >
+              Log In
+            </a>
+            <a
+              href="https://developers.popfab.io"
               className="bg-[#4361ee] hover:bg-[#3451de] text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors duration-200"
             >
               Start Building
-            </Link>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -115,20 +121,24 @@ export default function Navigation() {
             </Link>
           ))}
           <div className="border-t border-white/10 pt-4 flex flex-col gap-3">
-            <Link
-              href="/developers"
-              onClick={() => setMobileOpen(false)}
+            <a
+              href="https://developers.popfab.io"
               className="text-white/70 hover:text-white text-base font-medium transition-colors"
             >
               View Docs
-            </Link>
-            <Link
-              href="/developers"
-              onClick={() => setMobileOpen(false)}
+            </a>
+            <a
+              href="https://app.popfab.io"
+              className="text-white/70 hover:text-white text-base font-medium transition-colors"
+            >
+              Log In
+            </a>
+            <a
+              href="https://developers.popfab.io"
               className="bg-[#4361ee] hover:bg-[#3451de] text-white px-5 py-3 rounded-lg text-base font-semibold text-center transition-colors"
             >
               Start Building
-            </Link>
+            </a>
           </div>
         </div>
       </div>

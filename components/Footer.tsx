@@ -9,11 +9,11 @@ const footerLinks = {
     { label: 'Pricing', href: '/pricing' },
   ],
   Developers: [
-    { label: 'Documentation', href: '/developers' },
-    { label: 'API Reference', href: '/developers' },
-    { label: 'SDKs', href: '/developers' },
-    { label: 'Webhooks', href: '/developers' },
-    { label: 'Sandbox', href: '/developers' },
+    { label: 'Documentation', href: 'https://developers.popfab.io' },
+    { label: 'API Reference', href: 'https://developers.popfab.io' },
+    { label: 'SDKs', href: 'https://developers.popfab.io' },
+    { label: 'Webhooks', href: 'https://developers.popfab.io' },
+    { label: 'Sandbox', href: 'https://developers.popfab.io' },
   ],
   Company: [
     { label: 'About', href: '/about' },
@@ -85,12 +85,21 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-white/50 hover:text-white/80 text-sm transition-colors"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.href.startsWith('http') ? (
+                      <a
+                        href={link.href}
+                        className="text-white/50 hover:text-white/80 text-sm transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-white/50 hover:text-white/80 text-sm transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
