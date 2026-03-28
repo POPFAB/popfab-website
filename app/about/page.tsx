@@ -67,15 +67,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#0a0f1e] hero-bg pt-28 pb-24 relative">
-        <div className="absolute inset-0 grid-overlay opacity-50" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-[#4361ee]/15 border border-[#4361ee]/30 rounded-full px-4 py-2 mb-8">
-            <span className="text-[#a5b4fc] text-sm font-medium">Built in Lagos · CBN PSSP Licensed</span>
+      <section className="bg-[#0a0f1e] pt-28 pb-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-8">
+            <span className="text-white/60 text-sm font-medium">Built in Lagos · CBN PSSP Licensed</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Nigerian-built.<br />
-            <span className="gradient-text">Pan-African mission.</span>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+            Nigerian-built. Pan-African mission.
           </h1>
           <p className="text-white/60 text-xl max-w-3xl mx-auto leading-relaxed">
             POPFAB exists because African businesses — especially Nigerian ones — deserve payment infrastructure
@@ -179,9 +177,8 @@ export default function AboutPage() {
       </section>
 
       {/* Positioning statement */}
-      <section className="py-24 bg-[#0a0f1e] relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#4361ee]/15 rounded-full blur-3xl" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <section className="py-24 bg-[#0a0f1e]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 leading-tight">
             The positioning statement
           </h2>
@@ -228,7 +225,7 @@ export default function AboutPage() {
             Start with a free sandbox. No credit card. No demo required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://developers.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
+            <a href="https://developer.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
               Start Building Free
             </a>
             <Link href="/pricing" className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors">

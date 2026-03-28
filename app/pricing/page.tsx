@@ -163,13 +163,13 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="bg-[#0a0f1e] pt-28 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#4361ee]/15 border border-[#4361ee]/30 rounded-full px-4 py-2 mb-6">
-            <span className="text-[#a5b4fc] text-sm font-medium">Transparent NGN pricing · No hidden USD fees</span>
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6">
+            <span className="text-white/60 text-sm font-medium">Transparent NGN pricing · No hidden USD fees</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
             Simple, honest pricing.
           </h1>
-          <p className="text-white/60 text-xl max-w-2xl mx-auto mb-10">
+          <p className="text-white/50 text-lg max-w-xl mx-auto mb-10">
             Pay in naira. Scale as you grow. No lock-in. No surprise invoices.
           </p>
 
@@ -195,7 +195,7 @@ export default function PricingPage() {
       </section>
 
       {/* Plan cards */}
-      <section className="bg-[#f8fafc] py-16">
+      <section className="bg-[#f8f9fb] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {plans.map((plan) => (
@@ -203,13 +203,13 @@ export default function PricingPage() {
                 key={plan.name}
                 className={`relative rounded-2xl p-7 flex flex-col ${
                   plan.isPopular
-                    ? 'bg-[#4361ee] text-white shadow-2xl shadow-[#4361ee]/30'
-                    : 'bg-white border border-gray-200 hover:border-[#4361ee]/40 hover:shadow-xl'
+                    ? 'bg-[#4361ee] text-white shadow-xl shadow-[#4361ee]/20'
+                    : 'bg-white border border-gray-100 hover:border-[#4361ee]/30 hover:shadow-md'
                 } transition-all duration-300`}
               >
                 {plan.isPopular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-[#06b6d4] to-[#4361ee] text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                    <span className="bg-white text-[#4361ee] text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">
                       Most Popular
                     </span>
                   </div>
@@ -257,7 +257,7 @@ export default function PricingPage() {
                 </ul>
 
                 <a
-                  href={plan.isEnterprise ? '/about' : 'https://developers.popfab.io'}
+                  href={plan.isEnterprise ? '/about' : 'https://developer.popfab.io'}
                   className={`w-full py-2.5 rounded-xl font-semibold text-sm text-center transition-all block ${
                     plan.isPopular
                       ? 'bg-white text-[#4361ee] hover:bg-white/90'
@@ -319,7 +319,7 @@ export default function PricingPage() {
       </section>
 
       {/* Add-ons */}
-      <section className="py-20 bg-[#f8fafc]">
+      <section className="py-20 bg-[#f8f9fb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">Add-ons</span>
@@ -394,7 +394,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-[#f8fafc]">
+      <section className="py-20 bg-[#f8f9fb]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">FAQ</span>
@@ -439,7 +439,7 @@ export default function PricingPage() {
             No credit card. No sales call. No waiting. Your sandbox is ready in 60 seconds.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://developers.popfab.io" className="bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-4 rounded-xl font-semibold transition-colors">
+            <a href="https://developer.popfab.io" className="bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-4 rounded-xl font-semibold transition-colors">
               Start Building Free
             </a>
             <Link href="/about" className="border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/5 transition-colors">

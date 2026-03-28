@@ -25,7 +25,7 @@ const industries = [
     metric: '+12%',
     metricLabel: 'Checkout conversion',
     highlight: '<800ms failover',
-    highlightColor: 'bg-[#06b6d4]/10 text-[#06b6d4] border border-[#06b6d4]/20',
+    highlightColor: 'bg-[#4361ee]/10 text-[#4361ee] border border-[#4361ee]/20',
   },
   {
     id: 'saas',
@@ -67,8 +67,8 @@ export default function IndustryTabs() {
             onClick={() => setActive(industry.id)}
             className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
               active === industry.id
-                ? 'bg-[#4361ee] text-white shadow-lg shadow-[#4361ee]/30'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                ? 'bg-[#4361ee] text-white shadow-sm'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200 shadow-none'
             }`}
           >
             <span className="mr-2">{industry.icon}</span>

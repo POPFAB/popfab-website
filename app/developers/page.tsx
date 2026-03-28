@@ -242,13 +242,13 @@ const devCallouts = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-[#06b6d4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6 text-[#4361ee]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
       </svg>
     ),
     title: 'Human-readable errors',
     description: 'Every error includes a code, a human message, and a link to the relevant docs section. No cryptic status codes.',
-    color: 'bg-[#06b6d4]/10',
+    color: 'bg-[#4361ee]/10',
   },
   {
     icon: (
@@ -312,17 +312,15 @@ export default function DevelopersPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#0a0f1e] pt-28 pb-20 hero-bg grid-overlay relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="bg-[#0a0f1e] pt-28 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#06b6d4]/15 border border-[#06b6d4]/30 rounded-full px-4 py-2 mb-6">
-                <span className="text-[#67e8f9] text-sm font-medium">For developers, by developers</span>
+              <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6">
+                <span className="text-white/60 text-sm font-medium">For developers, by developers</span>
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-                One SDK. All six providers.
-                <br />
-                <span className="gradient-text">Ship in a day.</span>
+                One SDK. All six providers. Ship in a day.
               </h1>
               <p className="text-white/60 text-xl mb-8 leading-relaxed">
                 Replace 6 PSP integrations with one. TypeScript-first, fully typed, OpenAPI-backed. Your sandbox is live in 60 seconds.
@@ -347,7 +345,7 @@ export default function DevelopersPage() {
 
               <div className="flex gap-4">
                 <a
-                  href="https://developers.popfab.io"
+                  href="https://developer.popfab.io"
                   className="bg-[#4361ee] hover:bg-[#3451de] text-white px-6 py-3 rounded-xl font-semibold transition-colors"
                 >
                   Get API Key
@@ -425,7 +423,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* SDK cards */}
-      <section className="py-20 bg-[#f8fafc]">
+      <section className="py-20 bg-[#f8f9fb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">SDKs</span>
@@ -490,7 +488,7 @@ export default function DevelopersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="text-[#06b6d4] text-sm font-semibold uppercase tracking-wider">Webhooks</span>
+              <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">Webhooks</span>
               <h2 className="text-3xl font-bold text-white mt-3 mb-4">
                 Build webhook handlers with confidence.
               </h2>
@@ -547,7 +545,7 @@ export default function DevelopersPage() {
             60 seconds from now, you could have your first test payment running.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://developers.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
+            <a href="https://developer.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
               Get API Key — free
             </a>
             <a href="#docs" className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors">
