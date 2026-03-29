@@ -414,53 +414,54 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">Pricing</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0a0f1e] mt-3">
-              Transparent pricing in naira.
+              Pay per checkout. Not per month.
             </h2>
-            <p className="text-gray-400 text-base mt-3">All plans include a free sandbox. No credit card required to start.</p>
+            <p className="text-gray-400 text-base mt-3">Start free on the first ₦100M you process. Then buy credits as you grow.</p>
           </div>
 
+          {/* How it works strip */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
+            {[
+              { step: '1', label: 'Free tier', desc: 'First ₦100M of processed volume is completely free.' },
+              { step: '2', label: 'Buy credits', desc: 'Top up at ₦2.50 per credit — no subscription, no commitment.' },
+              { step: '3', label: '₦5 per checkout', desc: '2 credits deducted per completed checkout (success or failed).' },
+            ].map((s) => (
+              <div key={s.step} className="bg-white rounded-2xl p-6 border border-gray-100 text-center">
+                <div className="w-8 h-8 rounded-full bg-[#4361ee]/10 text-[#4361ee] font-bold text-sm flex items-center justify-center mx-auto mb-3">{s.step}</div>
+                <div className="font-semibold text-[#0a0f1e] text-sm mb-1">{s.label}</div>
+                <div className="text-gray-400 text-xs leading-relaxed">{s.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Credit packs */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              {
-                name: 'Starter',
-                price: '25,000',
-                fee: '0.20%',
-                features: ['3 PSP connections', 'Basic routing', '3 failover attempts', 'Standard analytics', 'Email support'],
-                popular: false,
-              },
-              {
-                name: 'Growth',
-                price: '75,000',
-                fee: '0.15%',
-                features: ['6 PSP connections', 'AI-powered routing', '5 failover attempts', 'Advanced analytics', 'Auto-reconciliation', 'Priority support'],
-                popular: true,
-              },
-              {
-                name: 'Scale',
-                price: '200,000',
-                fee: '0.10%',
-                features: ['6 PSP connections', 'Custom routing rules', 'Unlimited failover', 'Enterprise analytics', 'API 10k req/min', 'Dedicated support'],
-                popular: false,
-              },
-            ].map((plan) => (
+              { credits: '1,000', price: '2,500', checkouts: '500', popular: false },
+              { credits: '10,000', price: '25,000', checkouts: '5,000', popular: true },
+              { credits: '50,000', price: '125,000', checkouts: '25,000', popular: false },
+            ].map((pack) => (
               <div
-                key={plan.name}
-                className={`bg-white rounded-2xl p-7 border-2 relative ${plan.popular ? 'border-[#4361ee] shadow-lg shadow-[#4361ee]/10' : 'border-gray-100'}`}
+                key={pack.credits}
+                className={`bg-white rounded-2xl p-7 border-2 relative ${pack.popular ? 'border-[#4361ee] shadow-lg shadow-[#4361ee]/10' : 'border-gray-100'}`}
               >
-                {plan.popular && (
+                {pack.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                     <span className="bg-[#4361ee] text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
                   </div>
                 )}
-                <h3 className="font-bold text-[#0a0f1e] text-base mb-1">{plan.name}</h3>
-                <div className="flex items-baseline gap-0.5 mb-0.5">
-                  <span className="text-gray-400 text-sm">₦</span>
-                  <span className="text-3xl font-bold text-[#0a0f1e]">{plan.price}</span>
-                  <span className="text-gray-400 text-sm">/mo</span>
+                <div className="text-gray-400 text-xs font-medium mb-2 uppercase tracking-wider">Credit pack</div>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-3xl font-bold text-[#0a0f1e]">{pack.credits}</span>
+                  <span className="text-gray-400 text-sm">credits</span>
                 </div>
-                <p className="text-[#4361ee] text-sm font-medium mb-6">+ {plan.fee} per transaction</p>
+                <div className="flex items-baseline gap-0.5 mb-1">
+                  <span className="text-gray-400 text-sm">₦</span>
+                  <span className="text-xl font-bold text-[#0a0f1e]">{pack.price}</span>
+                </div>
+                <p className="text-[#4361ee] text-sm font-medium mb-6">{pack.checkouts} completed checkouts</p>
                 <ul className="space-y-2.5 mb-7">
-                  {plan.features.map((f) => (
+                  {['All providers included', 'Smart failover routing', 'Full analytics dashboard', 'Webhooks & reconciliation', 'Credits never expire'].map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
                       <svg className="w-4 h-4 text-[#10b981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -472,7 +473,7 @@ export default function HomePage() {
                 <Link
                   href="/pricing"
                   className={`w-full block text-center py-3 rounded-xl font-semibold text-sm transition-colors ${
-                    plan.popular
+                    pack.popular
                       ? 'bg-[#4361ee] text-white hover:bg-[#3451de]'
                       : 'border border-gray-200 text-[#0a0f1e] hover:border-[#4361ee] hover:text-[#4361ee]'
                   }`}
@@ -485,7 +486,7 @@ export default function HomePage() {
 
           <div className="text-center mt-8">
             <Link href="/pricing" className="text-[#4361ee] font-medium text-sm hover:underline inline-flex items-center gap-1">
-              See full pricing and feature comparison →
+              See full pricing details →
             </Link>
           </div>
         </div>
