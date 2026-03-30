@@ -8,7 +8,7 @@ const values = [
   },
   {
     title: 'African context first',
-    description: "We build for the African payment landscape as it actually is — USSD codes on feature phones, bank transfer dominance, Verve card prevalence, CBN regulatory requirements. Not as it looks from a Silicon Valley vantage point.",
+    description: "We build for the African payment landscape as it actually is: USSD codes on feature phones, bank transfer dominance, Verve card prevalence, local regulatory requirements. Not as it looks from a Silicon Valley vantage point.",
     icon: '🌍',
   },
   {
@@ -18,7 +18,7 @@ const values = [
   },
   {
     title: 'Compliance without complexity',
-    description: "CBN licensing, PCI-DSS, NDPR — we handle the regulatory overhead so you don't have to. Our compliance posture is a feature, not a footnote. Enterprise customers can request our full compliance documentation package.",
+    description: "We handle the regulatory overhead so you don't have to. Our compliance posture is a feature, not a footnote. Enterprise customers can request our full compliance documentation package.",
     icon: '🛡️',
   },
 ];
@@ -42,26 +42,6 @@ const notList = [
   },
 ];
 
-const team = [
-  {
-    name: 'Chuka Obi',
-    role: 'Co-founder & CEO',
-    background: 'Previously VP Engineering at Interswitch. 8 years in Nigerian payment infrastructure.',
-    initial: 'CO',
-  },
-  {
-    name: 'Adaeze Nwachukwu',
-    role: 'Co-founder & CTO',
-    background: "Previously Staff Engineer at Paystack. Built Paystack's routing layer from the ground up.",
-    initial: 'AN',
-  },
-  {
-    name: 'Seun Adeleke',
-    role: 'Head of Compliance',
-    background: 'Former CBN examiner. Led PSSP licensing for 3 fintechs before POPFAB.',
-    initial: 'SA',
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -70,7 +50,7 @@ export default function AboutPage() {
       <section className="bg-[#0a0f1e] pt-28 pb-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-8">
-            <span className="text-white/60 text-sm font-medium">Built in Lagos · CBN PSSP Licensed</span>
+            <span className="text-white/60 text-sm font-medium">Built in Lagos</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
             Nigerian-built. Pan-African mission.
@@ -104,9 +84,8 @@ export default function AboutPage() {
               {[
                 { label: 'Founded', value: '2023', icon: '📅' },
                 { label: 'Headquarters', value: 'Lagos, Nigeria', icon: '📍' },
-                { label: 'Regulatory status', value: 'CBN PSSP Licensed', icon: '🏛️' },
                 { label: 'Providers connected', value: '6 live, 4 in testing', icon: '🔗' },
-                { label: 'Security', value: 'PCI-DSS · NDPR Compliant', icon: '🔒' },
+                { label: 'Security', value: 'NDPR Compliant', icon: '🔒' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4 p-5 bg-[#f8fafc] rounded-2xl">
                   <span className="text-2xl">{item.icon}</span>
@@ -186,31 +165,6 @@ export default function AboutPage() {
             <p className="text-white text-xl sm:text-2xl leading-relaxed font-medium">
               &ldquo;POPFAB is the payment orchestration layer for African businesses — routing transactions intelligently across providers, absorbing provider failures before they reach customers, and replacing 6 fragmented dashboards with one unified view. We are the plumbing that makes African payment infrastructure production-grade.&rdquo;
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">Team</span>
-            <h2 className="text-3xl font-bold text-[#0a0f1e] mt-3">
-              Built by people who know Nigerian payments
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member) => (
-              <div key={member.name} className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#4361ee] to-[#06b6d4] flex items-center justify-center mx-auto mb-5">
-                  <span className="text-white font-bold text-xl">{member.initial}</span>
-                </div>
-                <h3 className="font-bold text-[#0a0f1e] text-base mb-1">{member.name}</h3>
-                <p className="text-[#4361ee] text-sm font-medium mb-3">{member.role}</p>
-                <p className="text-gray-500 text-sm leading-relaxed">{member.background}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

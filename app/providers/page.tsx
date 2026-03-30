@@ -97,8 +97,8 @@ const comingSoon = [
 
 const coverageData = [
   { country: 'Nigeria', flag: '🇳🇬', providers: 6, methods: 12, status: 'Full coverage' },
-  { country: 'Ghana', flag: '🇬🇭', providers: 2, methods: 5, status: 'Partial — expanding' },
-  { country: 'Kenya', flag: '🇰🇪', providers: 2, methods: 4, status: 'Partial — expanding' },
+  { country: 'Ghana', flag: '🇬🇭', providers: 2, methods: 5, status: 'Partial, expanding' },
+  { country: 'Kenya', flag: '🇰🇪', providers: 2, methods: 4, status: 'Partial, expanding' },
   { country: 'Uganda', flag: '🇺🇬', providers: 1, methods: 2, status: 'Limited' },
   { country: 'Tanzania', flag: '🇹🇿', providers: 1, methods: 2, status: 'Limited' },
   { country: 'South Africa', flag: '🇿🇦', providers: 1, methods: 3, status: 'Coming Q3 2024' },

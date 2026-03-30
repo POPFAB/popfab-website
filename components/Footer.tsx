@@ -104,13 +104,6 @@ export default function Footer() {
             © {new Date().getFullYear()} POPFAB Technologies Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-4 flex-wrap justify-center">
-            <div className="flex items-center gap-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#10b981] live-dot" />
-              <span className="text-white/30 text-xs">CBN PSSP Licensed</span>
-            </div>
-            <span className="text-white/20 text-xs hidden sm:inline">·</span>
-            <span className="text-white/30 text-xs">PCI-DSS Compliant</span>
-            <span className="text-white/20 text-xs hidden sm:inline">·</span>
             <span className="text-white/30 text-xs">NDPR Compliant</span>
           </div>
         </div>

@@ -227,7 +227,7 @@ const devCallouts = [
       </svg>
     ),
     title: '60-sec sandbox',
-    description: 'Sign up, get your test API key, and make your first API call — all in under 60 seconds. No KYC, no approval required.',
+    description: 'Sign up, get your test API key, and make your first API call, all in under 60 seconds. No KYC, no approval required.',
     color: 'bg-[#10b981]/10',
   },
   {
@@ -493,14 +493,14 @@ export default function DevelopersPage() {
                 Build webhook handlers with confidence.
               </h2>
               <p className="text-white/60 mb-8 leading-relaxed">
-                POPFAB delivers webhooks for every payment event. Our sandbox webhook inspector lets you test handlers before going live — replay events, inspect payloads, and simulate failures.
+                POPFAB delivers webhooks for every payment event. Our sandbox webhook inspector lets you test handlers before going live: replay events, inspect payloads, and simulate failures.
               </p>
 
               <div className="space-y-4">
                 {[
                   { event: 'payment.initiated', color: 'text-[#4361ee]', desc: 'Payment created, provider selected' },
                   { event: 'payment.success', color: 'text-[#10b981]', desc: 'Payment completed successfully' },
-                  { event: 'payment.failed', color: 'text-red-400', desc: 'Payment failed — includes failure reason' },
+                  { event: 'payment.failed', color: 'text-red-400', desc: 'Payment failed, includes failure reason' },
                   { event: 'payment.refunded', color: 'text-[#f5a623]', desc: 'Full or partial refund processed' },
                   { event: 'payment.disputed', color: 'text-orange-400', desc: 'Dispute raised by customer' },
                 ].map((evt) => (
@@ -546,7 +546,7 @@ export default function DevelopersPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://developer.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
-              Get API Key — free
+              Get API Key free
             </a>
             <a href="#docs" className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors">
               Browse API Reference

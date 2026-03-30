@@ -1,6 +1,4 @@
 'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 
 const creditPacks = [
@@ -35,50 +33,18 @@ const creditPacks = [
 
 const featureRows = [
   { label: 'PSP connections', value: 'All 6 (Paystack, Flutterwave, Monnify, Squad, Interswitch, Payaza)' },
-  { label: 'Automatic failover', value: 'Yes — <800ms' },
-  { label: 'Smart routing', value: 'Yes — AI-powered' },
-  { label: 'Webhook delivery', value: 'Yes — all event types' },
+  { label: 'Automatic failover', value: 'Yes, under 800ms' },
+  { label: 'Smart routing', value: 'Yes, AI-powered' },
+  { label: 'Webhook delivery', value: 'Yes, all event types' },
   { label: 'Unified analytics', value: 'Real-time dashboard' },
   { label: 'Reconciliation', value: 'Automated, all providers' },
   { label: 'API rate limit', value: 'Generous defaults · contact for higher' },
   { label: 'Support', value: 'Email + docs · priority for high volume' },
-  { label: 'Sandbox', value: 'Free forever — no credits consumed' },
+  { label: 'Sandbox', value: 'Free forever, no credits consumed' },
 ];
 
-const faqs = [
-  {
-    q: 'What is a "completed checkout"?',
-    a: 'A completed checkout is any payment that reaches a terminal state — either payment.success or payment.failed — after POPFAB has routed it to a provider. We charge for completed checkouts because we performed work: routing decisions, provider calls, failover logic, and reconciliation records — regardless of outcome.',
-  },
-  {
-    q: 'What is the free tier?',
-    a: 'Every merchant gets the first ₦100,000,000 (₦100M) of processed volume completely free. This is measured as the total sum of all payment amounts routed through POPFAB — including both successful and failed payments. Once you cross ₦100M in processed volume, credits are deducted per checkout.',
-  },
-  {
-    q: 'Why charge for failed payments too?',
-    a: "When a payment fails, POPFAB still performed routing, attempted failover to backup providers, handled error normalisation, and logged reconciliation data. That infrastructure work has a cost. Think of it like AWS — you pay for the compute even if your request returns an error.",
-  },
-  {
-    q: 'What happens when my credits run out?',
-    a: 'Your checkout routing continues — we will not drop payments because of a low credit balance. You will receive a low-balance alert when you have fewer than 200 credits remaining. Top up anytime through the dashboard.',
-  },
-  {
-    q: 'Do sandbox payments consume credits?',
-    a: 'No. Sandbox (test environment) payments never consume credits and are not counted toward your ₦100M free-tier volume. Credits are only consumed for live-environment checkouts.',
-  },
-  {
-    q: 'Can I buy credits in custom amounts?',
-    a: 'Yes. The packs above are suggestions. You can purchase any amount from ₦250 (1 credit) upwards. Credits never expire.',
-  },
-  {
-    q: 'Is POPFAB regulated?',
-    a: "POPFAB operates as a CBN-licensed Payment Solution Service Provider (PSSP). We are PCI-DSS compliant and operate under Nigeria's NDPR framework for data protection.",
-  },
-];
 
 export default function PricingPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <>
       {/* Hero */}
@@ -116,7 +82,7 @@ export default function PricingPage() {
               {
                 step: '3',
                 title: 'Pay per checkout',
-                desc: 'Each completed checkout deducts 2 credits (₦5.00). Charged on success and failure — because we did the work either way.',
+                desc: 'Each completed checkout deducts 2 credits (₦5.00).',
                 highlight: '₦5.00 per checkout',
               },
             ].map((item) => (
@@ -259,7 +225,6 @@ export default function PricingPage() {
                   { feature: 'Monthly commitment', popfab: 'None — buy credits as needed', njia: 'R1,500 – R15,000/mo minimum' },
                   { feature: 'Nigerian providers', popfab: '6 live (all major PSPs)', njia: '2 Nigerian providers' },
                   { feature: 'Self-serve signup', popfab: 'Yes — sandbox in 60 seconds', njia: 'Book a demo required' },
-                  { feature: 'CBN PSSP license', popfab: 'Yes — direct license', njia: 'Operates via partner' },
                   { feature: 'Failover speed', popfab: '<800ms automatic', njia: 'Manual failover rules' },
                   { feature: 'Reconciliation', popfab: 'Auto-generated, all providers', njia: 'Manual per-provider CSV' },
                 ].map((row) => (
@@ -278,40 +243,6 @@ export default function PricingPage() {
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">FAQ</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0a0f1e] mt-2">Pricing questions answered</h2>
-          </div>
-
-          <div className="space-y-3">
-            {faqs.map((faq, i) => (
-              <div key={i} className="bg-[#f8f9fb] border border-gray-100 rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-5 py-4 text-left"
-                >
-                  <span className="font-semibold text-[#0a0f1e] text-sm pr-4">{faq.q}</span>
-                  <svg
-                    className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`}
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {openFaq === i && (
-                  <div className="px-5 pb-5">
-                    <p className="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
-                  </div>
-                )}
-              </div>
-            ))}
           </div>
         </div>
       </section>

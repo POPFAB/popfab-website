@@ -56,7 +56,7 @@ export default function HomePage() {
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
               <div className="w-2 h-2 rounded-full bg-[#10b981] live-dot flex-shrink-0" />
-              <span className="text-white/60 text-sm font-medium">CBN PSSP Licensed · Nigerian-Built · Pan-African</span>
+              <span className="text-white/60 text-sm font-medium">Nigerian-Built · Pan-African</span>
             </div>
           </div>
 
@@ -423,7 +423,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
             {[
               { step: '1', label: 'Free tier', desc: 'First ₦100M of processed volume is completely free.' },
-              { step: '2', label: 'Buy credits', desc: 'Top up at ₦2.50 per credit — no subscription, no commitment.' },
+              { step: '2', label: 'Buy credits', desc: 'Top up at ₦2.50 per credit, no subscription, no commitment.' },
               { step: '3', label: '₦5 per checkout', desc: '2 credits deducted per completed checkout (success or failed).' },
             ].map((s) => (
               <div key={s.step} className="bg-white rounded-2xl p-6 border border-gray-100 text-center">
@@ -560,7 +560,7 @@ export default function HomePage() {
                   href="https://developer.popfab.io"
                   className="w-full sm:w-auto bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-3.5 rounded-lg font-semibold text-sm transition-colors inline-flex items-center justify-center gap-2"
                 >
-                  Start Building — free in sandbox
+                  Start Building free in sandbox
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -620,7 +620,7 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#10b981] live-dot flex-shrink-0" />
-            <span className="text-white/50 text-sm">CBN PSSP Licensed · Production-ready</span>
+            <span className="text-white/50 text-sm">Production-ready</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
             Ready to own your payment infrastructure?
