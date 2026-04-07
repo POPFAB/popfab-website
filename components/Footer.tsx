@@ -8,8 +8,8 @@ const footerLinks = {
     { label: 'Analytics', href: '/#product' },
   ],
   Developers: [
-    { label: 'Documentation', href: 'https://developer.popfab.io' },
-    { label: 'API Reference', href: 'https://developer.popfab.io' },
+    { label: 'Documentation', href: 'https://developer.popfab.io/docs' },
+    { label: 'API Reference', href: 'https://developer.popfab.io/docs' },
     { label: 'SDKs', href: 'https://developer.popfab.io' },
     { label: 'Webhooks', href: 'https://developer.popfab.io' },
     { label: 'Sandbox', href: 'https://developer.popfab.io' },

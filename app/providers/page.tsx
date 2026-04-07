@@ -279,7 +279,7 @@ export default function ProvidersPage() {
               Start Building Free
             </a>
             <a
-              href="https://developer.popfab.io"
+              href="https://developer.popfab.io/docs"
               className="border border-gray-200 hover:border-[#4361ee] text-gray-700 hover:text-[#4361ee] px-7 py-3.5 rounded-lg font-semibold text-sm transition-colors"
             >
               View Documentation
