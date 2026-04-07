@@ -548,7 +548,7 @@ export default function DevelopersPage() {
             <a href="https://developer.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
               Get API Key free
             </a>
-            <a href="#docs" className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors">
+            <a href="https://developer.popfab.io/docs" className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors">
               Browse API Reference
             </a>
           </div>
