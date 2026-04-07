@@ -7,12 +7,12 @@ const industries = [
     id: 'fintech',
     label: 'Fintech & Startups',
     icon: '⚡',
-    pain: 'You need to pass CBN PSSP audits, maintain 99.9%+ uptime, and launch new payment methods fast — without building the infrastructure yourself.',
-    solution: 'POPFAB handles CBN PSSP compliance for you. Launch with a single CBN-licensed connection. Add Paystack, Flutterwave, and Monnify as fallbacks with zero additional licensing overhead.',
-    outcome: 'Reduce time to payment compliance from 6 months to 2 weeks. Achieve 99.95% uptime without managing multiple PSP relationships.',
+    pain: 'You need to maintain 99.9%+ uptime and launch new payment methods fast, without building the infrastructure yourself.',
+    solution: 'POPFAB handles provider complexity for you. Launch with a single connection. Add Paystack, Flutterwave, and Monnify as fallbacks with zero additional overhead.',
+    outcome: 'Reduce time to payment integration from weeks to days. Achieve 99.95% uptime without managing multiple PSP relationships.',
     metric: '6 months → 2 weeks',
-    metricLabel: 'Time to compliance',
-    highlight: 'CBN PSSP Licensed',
+    metricLabel: 'Time to go live',
+    highlight: 'Instant onboarding',
     highlightColor: 'bg-[#4361ee]/10 text-[#4361ee] border border-[#4361ee]/20',
   },
   {
@@ -20,12 +20,12 @@ const industries = [
     label: 'E-commerce',
     icon: '🛒',
     pain: 'Cart abandonment spikes every time a payment provider has downtime. You\'re losing ₦500k+ per hour during peak shopping periods when Paystack or Flutterwave degrades.',
-    solution: 'POPFAB automatically routes to the fastest, most reliable provider in real time. If Paystack degrades, traffic shifts to Flutterwave or Monnify in under 800ms — invisible to your customers.',
+    solution: 'POPFAB automatically routes to the fastest, most reliable provider in real time. If Paystack degrades, traffic shifts to Flutterwave or Monnify in under 800ms, invisible to your customers.',
     outcome: '12% reduction in cart abandonment. 8 percentage point increase in payment success rates. Full payment continuity during provider outages.',
     metric: '+12%',
     metricLabel: 'Checkout conversion',
     highlight: '<800ms failover',
-    highlightColor: 'bg-[#06b6d4]/10 text-[#06b6d4] border border-[#06b6d4]/20',
+    highlightColor: 'bg-[#4361ee]/10 text-[#4361ee] border border-[#4361ee]/20',
   },
   {
     id: 'saas',
@@ -67,8 +67,8 @@ export default function IndustryTabs() {
             onClick={() => setActive(industry.id)}
             className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
               active === industry.id
-                ? 'bg-[#4361ee] text-white shadow-lg shadow-[#4361ee]/30'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                ? 'bg-[#4361ee] text-white shadow-sm'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200 shadow-none'
             }`}
           >
             <span className="mr-2">{industry.icon}</span>

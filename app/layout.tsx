@@ -13,9 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'POPFAB — Payment Orchestration for African Businesses',
   description:
-    'One API to route payments across Paystack, Flutterwave, Monnify, Squad, Interswitch, and Payaza. Automatic failover, smart routing, and unified analytics. CBN PSSP licensed.',
+    'One API to route payments across Paystack, Flutterwave, Monnify, Squad, Interswitch, and Payaza. Automatic failover, smart routing, and unified analytics.',
   keywords:
-    'payment orchestration, Nigeria, Africa, Paystack, Flutterwave, Monnify, Squad, Interswitch, payment API, CBN PSSP',
+    'payment orchestration, Nigeria, Africa, Paystack, Flutterwave, Monnify, Squad, Interswitch, payment API',
   openGraph: {
     title: 'POPFAB — Payment Orchestration for African Businesses',
     description:
