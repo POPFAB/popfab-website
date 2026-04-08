@@ -211,7 +211,7 @@ export default function HomePage() {
                 label: 'RELIABILITY',
                 accentColor: '#4361ee',
                 title: "Your payments don't stop when a provider does.",
-                desc: 'When Paystack degrades, POPFAB automatically fails over to Flutterwave or Monnify in under 800ms. Your customers never see the failure.',
+                desc: 'When Paystack degrades, POPFAB automatically falls over to Flutterwave or Monnify in under 800ms. Your customers never see the failure.',
                 stats: [{ label: 'Failover time', value: '<800ms' }, { label: 'Uptime', value: '99.95%' }],
                 icon: (
                   <svg className="w-5 h-5 text-[#4361ee]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
