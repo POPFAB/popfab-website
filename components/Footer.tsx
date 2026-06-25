@@ -38,9 +38,9 @@ export default function Footer() {
             <Link href="/" className="flex items-center mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/popfablong.png"
+                src="/images/popfablong-white.png"
                 alt="POPFAB"
-                className="h-8 w-auto object-contain brightness-0 invert"
+                className="h-8 w-auto object-contain"
               />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-5">

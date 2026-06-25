@@ -34,7 +34,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/popfablong.png"
+              src={scrolled ? '/images/popfablong-dark.png' : '/images/popfablong-white.png'}
               alt="POPFAB"
               className="h-9 w-auto object-contain"
             />
