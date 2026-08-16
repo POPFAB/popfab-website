@@ -3,14 +3,14 @@ import Link from 'next/link';
 import CodeBlock from '@/components/CodeBlock';
 import IndustryTabs from '@/components/IndustryTabs';
 
-const providers: Array<{ name: string; logo: string; description: string; logoText?: string }> = [
-  { name: 'ALATPay', logo: '/images/alatpay.png', description: 'Card · Bank Transfer · Virtual Accounts' },
-  { name: 'Paystack', logo: '/images/paystack-logo.png', description: 'Card · Bank Transfer · USSD' },
-  { name: 'Flutterwave', logo: '/images/flutterwave-logo.png', description: 'Card · Bank · Mobile Money' },
-  { name: 'Monnify', logo: '/images/monnify-logo.png', description: 'Bank Transfer · USSD' },
-  { name: 'Squad', logo: '/images/squad-logo.jpeg', description: 'Card · Bank Transfer' },
-  { name: 'Interswitch', logo: '/images/interswitch-logo.png', description: 'Card · USSD · Quickteller' },
-  { name: 'Payaza', logo: '/images/payaza-logo.jpeg', description: 'Card · Bank Transfer' },
+const providers: Array<{ name: string; logo: string; description: string; availability: 'Available'; logoText?: string }> = [
+  { name: 'ALATPay', logo: '/images/alatpay.png', description: 'Bank Transfer · Virtual Accounts', availability: 'Available' },
+  { name: 'Paystack', logo: '/images/paystack-logo.png', description: 'Card · Bank Transfer · USSD', availability: 'Available' },
+  { name: 'Flutterwave', logo: '/images/flutterwave-logo.png', description: 'Card · Bank · Mobile Money', availability: 'Available' },
+  { name: 'Monnify', logo: '/images/monnify-logo.png', description: 'Bank Transfer · USSD', availability: 'Available' },
+  { name: 'Squad', logo: '/images/squad-logo.jpeg', description: 'Card · Bank Transfer', availability: 'Available' },
+  { name: 'Interswitch', logo: '/images/interswitch-logo.png', description: 'Card · USSD · Quickteller', availability: 'Available' },
+  { name: 'Payaza', logo: '/images/payaza-logo.jpeg', description: 'Card · Bank Transfer', availability: 'Available' },
 ];
 
 const initiateCode = `const popfab = require('@popfab/node');
@@ -24,27 +24,21 @@ const payment = await client.payments.initiate({
   customer: { email: 'customer@example.com' }
 });`;
 
-const testimonials = [
+const teamOutcomes = [
   {
-    quote: 'We used to lose roughly ₦800k every time Paystack had downtime. With POPFAB, our checkout just keeps running. We saw a 14% increase in successful payments in the first month.',
-    author: 'Adaeze Okonkwo',
-    role: 'CTO, Konga Marketplace',
-    metric: '+14%',
-    metricLabel: 'payment success',
+    title: 'Engineering',
+    description: 'Keep provider logic out of your core product, with one consistent API and a clearer integration path.',
+    detail: 'One integration surface',
   },
   {
-    quote: "Our reconciliation team went from spending 3 days per month on payment data to about 4 hours. One dashboard, one CSV, everything in one place.",
-    author: 'Emeka Nwosu',
-    role: 'Head of Finance, Cowrywise',
-    metric: '−90%',
-    metricLabel: 'reconciliation time',
+    title: 'Operations',
+    description: 'See payments, provider activity, reconciliation, and exceptions in a single operational workspace.',
+    detail: 'One source of truth',
   },
   {
-    quote: 'We integrated POPFAB in a weekend and deprecated our custom PSP abstraction layer that took 6 engineers 4 months to build. The SDK is that good.',
-    author: 'Funke Adeleke',
-    role: 'Engineering Lead, PiggyVest',
-    metric: '1 weekend',
-    metricLabel: 'to integrate',
+    title: 'Finance',
+    description: 'Create a cleaner trail from payment attempt to settlement without jumping between provider dashboards.',
+    detail: 'Clearer reconciliation',
   },
 ];
 
@@ -52,8 +46,9 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#0a0f1e] min-h-screen flex items-center pt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <section className="relative overflow-hidden bg-[#10122a] min-h-screen flex items-center pt-16">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_0%,rgba(117,118,255,0.26),transparent_32rem),radial-gradient(circle_at_86%_72%,rgba(31,189,148,0.12),transparent_28rem)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
               <div className="w-2 h-2 rounded-full bg-[#10b981] live-dot flex-shrink-0" />
@@ -61,27 +56,53 @@ export default function HomePage() {
             </div>
           </div>
 
-          <h1 className="text-center text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-5 max-w-4xl mx-auto">
-            One API. Every payment provider in Africa.
+          <h1 className="text-center text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.06] tracking-[-0.045em] mb-5 max-w-4xl mx-auto">
+            Payments that keep your business moving.
           </h1>
 
           <p className="text-center text-white/50 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Route payments across ALATPay, Paystack, Flutterwave, Monnify, Squad, Interswitch, and Payaza with automatic failover. One integration. Zero downtime.
+            One integration layer for the providers your customers know—built to give your team more control, flexibility, and clarity.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
             <a
               href="https://developer.popfab.io"
-              className="w-full sm:w-auto bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-3.5 rounded-lg text-base font-semibold transition-colors text-center"
+              className="w-full sm:w-auto bg-[#6a6bea] hover:bg-[#7979f5] text-white px-8 py-3.5 rounded-xl text-base font-semibold shadow-[0_12px_28px_rgba(91,92,226,0.32)] transition-all hover:-translate-y-0.5 text-center"
             >
-              Start Building Free
+              Start building
             </a>
             <Link
               href="#product"
-              className="w-full sm:w-auto border border-white/20 hover:border-white/40 text-white/80 hover:text-white px-8 py-3.5 rounded-lg text-base font-semibold transition-colors text-center"
+              className="w-full sm:w-auto border border-white/15 hover:border-white/40 bg-white/[0.03] text-white/80 hover:text-white px-8 py-3.5 rounded-xl text-base font-semibold transition-colors text-center"
             >
-              See How It Works
+              Explore the platform
             </Link>
+          </div>
+
+          <div className="mx-auto mb-14 max-w-3xl rounded-[1.5rem] border border-white/10 bg-[#171a37]/85 p-4 shadow-2xl shadow-black/30 backdrop-blur-sm sm:p-5">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div>
+                <p className="font-semibold text-white">Payment routing</p>
+                <p className="mt-1 text-xs text-white/40">A clearer view of every payment decision</p>
+              </div>
+              <span className="rounded-full bg-[#2b7d65]/25 px-2.5 py-1 text-xs font-semibold text-[#8ce8c7]">Optimised</span>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-[1.1fr_.9fr]">
+              <div className="rounded-xl border border-white/8 bg-black/15 p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div><p className="text-xs text-white/45">Checkout reference</p><p className="mt-1 font-mono text-sm text-white">ORD-2048-NG</p></div>
+                  <p className="text-lg font-semibold text-white">₦50,000</p>
+                </div>
+                <div className="my-4 h-px bg-white/10" />
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between rounded-lg border border-[#7b7cf2]/30 bg-[#6a6bea]/10 px-3 py-2.5"><span className="text-sm font-medium text-white">POPFAB routing layer</span><span className="text-xs text-[#b5b6ff]">Evaluating</span></div>
+                  <div className="ml-5 border-l border-dashed border-white/20 pl-4 py-1"><div className="flex items-center justify-between rounded-lg bg-white/[0.06] px-3 py-2.5"><span className="text-sm text-white/75">Preferred provider</span><span className="text-xs font-semibold text-[#8ce8c7]">Selected</span></div></div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 gap-2.5">
+                {['Provider performance', 'Payment method', 'Transaction context'].map((item, index) => <div key={item} className="rounded-xl border border-white/8 bg-white/[0.035] p-3.5"><p className="text-xs text-white/40">{item}</p><p className="mt-1.5 text-sm font-medium text-white/85">{index === 0 ? 'Part of every routing decision' : index === 1 ? 'Matched to the right flow' : 'Visible in one workspace'}</p></div>)}
+              </div>
+            </div>
           </div>
 
           {/* Provider logos */}
@@ -202,9 +223,9 @@ export default function HomePage() {
               {
                 label: 'RELIABILITY',
                 accentColor: '#4361ee',
-                title: "Your payments don't stop when a provider does.",
-                desc: 'When Paystack degrades, POPFAB automatically falls over to Flutterwave or Monnify in under 800ms. Your customers never see the failure.',
-                stats: [{ label: 'Failover time', value: '<800ms' }, { label: 'Uptime', value: '99.95%' }],
+                title: 'Build a more resilient provider strategy.',
+                desc: 'Configure your enabled provider set so your payment operation is not dependent on a single integration path.',
+                stats: [{ label: 'Provider strategy', value: 'Configurable' }, { label: 'Operations', value: 'Unified' }],
                 icon: (
                   <svg className="w-5 h-5 text-[#4361ee]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -214,9 +235,9 @@ export default function HomePage() {
               {
                 label: 'INTELLIGENCE',
                 accentColor: '#4361ee',
-                title: 'Route every transaction to the provider most likely to succeed.',
-                desc: 'Our routing engine learns from millions of transactions to predict the optimal provider for each payment based on method, bank, amount, and time of day.',
-                stats: [{ label: 'Success rate lift', value: '+8pp avg' }, { label: 'Routing signals', value: '40+ per txn' }],
+                title: 'Make routing decisions with the right context.',
+                desc: 'Use payment method, provider access, and your operating rules to build a routing approach that fits your business.',
+                stats: [{ label: 'Routing rules', value: 'Configurable' }, { label: 'Provider choice', value: 'Flexible' }],
                 icon: (
                   <svg className="w-5 h-5 text-[#4361ee]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -266,7 +287,7 @@ export default function HomePage() {
               Works with every provider your customers trust.
             </h2>
             <p className="text-gray-400 text-base mt-3 max-w-xl mx-auto">
-              All 7 major Nigerian payment providers connected, tested, and production-ready.
+              Choose the provider mix that fits your payment flow, with availability shown clearly for every integration.
             </p>
           </div>
 
@@ -280,8 +301,8 @@ export default function HomePage() {
                 <div className="text-center">
                   <div className="font-semibold text-[#0a0f1e] text-sm">{p.name}</div>
                   <div className="flex items-center justify-center gap-1 mt-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#10b981] live-dot" />
-                    <span className="text-[#10b981] text-xs font-medium">Live</span>
+                    <div className={`w-1.5 h-1.5 rounded-full ${p.availability === 'Available' ? 'bg-[#10b981] live-dot' : 'bg-amber-400'}`} />
+                    <span className={`text-xs font-medium ${p.availability === 'Available' ? 'text-[#10b981]' : 'text-amber-600'}`}>{p.availability}</span>
                   </div>
                 </div>
                 <div className="w-full pt-2 border-t border-gray-100">
@@ -327,10 +348,10 @@ export default function HomePage() {
               </p>
               <div className="grid grid-cols-2 gap-3 mb-7">
                 {[
-                  { label: 'Success rate lift', value: '+8pp' },
-                  { label: 'Platform uptime', value: '99.95%' },
-                  { label: 'Reconciliation time', value: '−90%' },
-                  { label: 'Integration time', value: '1 day' },
+                  { label: 'Provider access', value: 'Flexible' },
+                  { label: 'Payment operations', value: 'Unified' },
+                  { label: 'Reconciliation', value: 'Clearer' },
+                  { label: 'Integration surface', value: 'One API' },
                 ].map((stat) => (
                   <div key={stat.label} className="bg-white/5 rounded-xl p-4">
                     <div className="text-xl font-bold text-[#4361ee] mb-0.5">{stat.value}</div>
@@ -556,44 +577,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SOCIAL PROOF */}
+      {/* TEAM VALUE */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">Testimonials</span>
+            <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">Designed for teams</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0a0f1e] mt-3">
-              Trusted by payment-serious Nigerian businesses
+              One payments layer. Better decisions across the business.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.author} className="bg-[#f8f9fb] border border-gray-100 rounded-2xl p-7 flex flex-col">
-                <div className="flex gap-1 mb-5">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-gray-600 text-sm leading-relaxed flex-1 mb-6">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <div className="flex items-center justify-between pt-5 border-t border-gray-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-[#4361ee]/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-[#4361ee] font-bold text-sm">{t.author[0]}</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-[#0a0f1e] text-sm">{t.author}</div>
-                      <div className="text-gray-400 text-xs">{t.role}</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-lg font-bold text-[#4361ee]">{t.metric}</div>
-                    <div className="text-gray-400 text-xs">{t.metricLabel}</div>
-                  </div>
-                </div>
+            {teamOutcomes.map((outcome, index) => (
+              <div key={outcome.title} className="rounded-2xl border border-[#e7e9f1] bg-[#fbfbfe] p-7 transition-shadow hover:shadow-[0_16px_36px_rgba(16,18,42,0.07)]">
+                <div className="mb-7 flex h-10 w-10 items-center justify-center rounded-xl bg-[#5b5ce2]/10 font-semibold text-[#5b5ce2]">0{index + 1}</div>
+                <h3 className="text-lg font-bold text-[#0a0f1e]">{outcome.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-gray-500">{outcome.description}</p>
+                <p className="mt-7 border-t border-[#e7e9f1] pt-4 text-sm font-semibold text-[#4b4cca]">{outcome.detail}</p>
               </div>
             ))}
           </div>
@@ -611,7 +611,7 @@ export default function HomePage() {
             Ready to own your payment infrastructure?
           </h2>
           <p className="text-white/50 text-lg mb-9 max-w-xl mx-auto">
-            Join Nigerian businesses processing billions in naira with POPFAB. Sandbox is free. Production is fast.
+            Explore the sandbox, see the integration flow, and prepare a provider strategy that can grow with your business.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a

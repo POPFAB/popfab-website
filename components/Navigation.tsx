@@ -24,7 +24,7 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white border-b border-gray-200 shadow-sm'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-[#e7e9f1] shadow-[0_8px_30px_rgba(16,18,42,0.05)]'
           : 'bg-transparent'
       }`}
     >
@@ -67,7 +67,7 @@ export default function Navigation() {
             </a>
             <a
               href="https://developer.popfab.io"
-              className="bg-[#4361ee] hover:bg-[#3451de] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200"
+                className="bg-[#5b5ce2] hover:bg-[#4546c8] text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-[0_6px_16px_rgba(91,92,226,0.24)] transition-all duration-200 hover:-translate-y-0.5"
             >
               Start Building
             </a>
@@ -82,17 +82,17 @@ export default function Navigation() {
             <div className="w-6 flex flex-col gap-1.5">
               <span
                 className={`block h-0.5 transition-all duration-300 ${
-                  scrolled ? 'bg-[#0a0f1e]' : 'bg-white'
+                  scrolled || mobileOpen ? 'bg-[#0a0f1e]' : 'bg-white'
                 } ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}
               />
               <span
                 className={`block h-0.5 transition-all duration-300 ${
-                  scrolled ? 'bg-[#0a0f1e]' : 'bg-white'
+                  scrolled || mobileOpen ? 'bg-[#0a0f1e]' : 'bg-white'
                 } ${mobileOpen ? 'opacity-0' : ''}`}
               />
               <span
                 className={`block h-0.5 transition-all duration-300 ${
-                  scrolled ? 'bg-[#0a0f1e]' : 'bg-white'
+                  scrolled || mobileOpen ? 'bg-[#0a0f1e]' : 'bg-white'
                 } ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}
               />
             </div>
@@ -102,7 +102,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden bg-white border-t border-gray-100 transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden bg-white/98 backdrop-blur-xl border-t border-gray-100 transition-all duration-300 overflow-hidden ${
           mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
@@ -126,7 +126,7 @@ export default function Navigation() {
             </a>
             <a
               href="https://developer.popfab.io"
-              className="bg-[#4361ee] hover:bg-[#3451de] text-white px-4 py-3 rounded-lg text-base font-semibold text-center transition-colors"
+              className="bg-[#5b5ce2] hover:bg-[#4546c8] text-white px-4 py-3 rounded-xl text-base font-semibold text-center shadow-[0_6px_16px_rgba(91,92,226,0.2)] transition-colors"
             >
               Start Building
             </a>

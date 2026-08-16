@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'POPFAB — Payment Orchestration for African Businesses',
     description:
-      'One API. Every payment provider in Africa. Automatic failover in <800ms, +8pp success rate, unified analytics.',
+      'One integration layer for provider routing, payment operations, and unified analytics.',
     type: 'website',
     locale: 'en_NG',
   },
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="min-h-screen flex flex-col bg-white text-[#0a0f1e]">
+      <body className="site-shell min-h-screen flex flex-col bg-white text-[#0a0f1e]">
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #4361ee;
-  --primary-dark: #3451de;
-  --dark: #0a0f1e;
-  --gray-50: #f8f9fb;
-  --gray-100: #f1f3f7;
-  --success: #10b981;
+  --primary: #5b5ce2;
+  --primary-dark: #4546c8;
+  --ink: #10122a;
+  --dark: #10122a;
+  --surface: #f7f8fc;
+  --gray-50: #f7f8fc;
+  --gray-100: #eceef5;
+  --success: #169b6b;
 }
 
 * {
@@ -23,6 +25,49 @@ body {
   color: #111827;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #dfe0ff;
+  color: var(--ink);
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(91, 92, 226, 0.35);
+  outline-offset: 3px;
+}
+
+/* Shared presentation treatment. Page-level layouts retain their existing content
+   while inheriting a more deliberate surface and interaction language. */
+.site-shell {
+  background:
+    radial-gradient(circle at 78% -15%, rgba(107, 108, 239, 0.15), transparent 31rem),
+    #ffffff;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(91, 92, 226, 0.18);
+  border-radius: 999px;
+  background: rgba(91, 92, 226, 0.07);
+  color: #4b4cca;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #dfe2ed 15%, #dfe2ed 85%, transparent);
 }
 
 /* Code block */

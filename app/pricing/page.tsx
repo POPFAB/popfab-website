@@ -32,8 +32,8 @@ const creditPacks = [
 ];
 
 const featureRows = [
-  { label: 'PSP connections', value: 'All 6 (Paystack, Flutterwave, Monnify, Squad, Interswitch, Payaza)' },
-  { label: 'Automatic failover', value: 'Yes, under 800ms' },
+  { label: 'Provider connections', value: 'Available providers, with rollout status shown clearly' },
+  { label: 'Routing controls', value: 'Configured to your enabled provider set' },
   { label: 'Smart routing', value: 'Yes, AI-powered' },
   { label: 'Webhook delivery', value: 'Yes, all event types' },
   { label: 'Unified analytics', value: 'Real-time dashboard' },
@@ -176,7 +176,7 @@ export default function PricingPage() {
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">What's included</span>
+            <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">What&apos;s included</span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#0a0f1e] mt-2">Everything, for every merchant</h2>
             <p className="text-gray-400 text-sm mt-2">There are no feature tiers. Every merchant gets the full platform.</p>
           </div>
@@ -223,9 +223,9 @@ export default function PricingPage() {
                   { feature: 'Pricing model', popfab: 'Credit-based, pay per checkout', njia: 'Monthly subscription + % fee' },
                   { feature: 'Free tier', popfab: 'First ₦100M processed, free', njia: 'No free tier' },
                   { feature: 'Monthly commitment', popfab: 'None — buy credits as needed', njia: 'R1,500 – R15,000/mo minimum' },
-                  { feature: 'Nigerian providers', popfab: '6 live (all major PSPs)', njia: '2 Nigerian providers' },
+                  { feature: 'Nigerian providers', popfab: '7 available providers', njia: '2 Nigerian providers' },
                   { feature: 'Self-serve signup', popfab: 'Yes — sandbox in 60 seconds', njia: 'Book a demo required' },
-                  { feature: 'Failover speed', popfab: '<800ms automatic', njia: 'Manual failover rules' },
+                  { feature: 'Routing controls', popfab: 'Provider-aware configuration', njia: 'Manual failover rules' },
                   { feature: 'Reconciliation', popfab: 'Auto-generated, all providers', njia: 'Manual per-provider CSV' },
                 ].map((row) => (
                   <tr key={row.feature} className="hover:bg-white transition-colors">

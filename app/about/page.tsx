@@ -4,22 +4,22 @@ const values = [
   {
     title: 'Infrastructure honesty',
     description: "We tell you exactly how our routing engine makes decisions. No black boxes. When POPFAB routes a payment to Paystack over Flutterwave, you can see why — success rate, latency, and method compatibility scores are logged for every transaction.",
-    icon: '🔍',
+    icon: 'search',
   },
   {
     title: 'African context first',
     description: "We build for the African payment landscape as it actually is: USSD codes on feature phones, bank transfer dominance, Verve card prevalence, local regulatory requirements. Not as it looks from a Silicon Valley vantage point.",
-    icon: '🌍',
+    icon: 'globe',
   },
   {
     title: 'Developer respect',
     description: "We write documentation we would want to read. We build SDKs we would want to use. We design error messages that tell you exactly what went wrong and exactly how to fix it. Your time is not ours to waste.",
-    icon: '💻',
+    icon: 'code',
   },
   {
     title: 'Compliance without complexity',
     description: "We handle the regulatory overhead so you don't have to. Our compliance posture is a feature, not a footnote. Enterprise customers can request our full compliance documentation package.",
-    icon: '🛡️',
+    icon: 'shield',
   },
 ];
 
@@ -34,7 +34,7 @@ const notList = [
   },
   {
     heading: 'Not enterprise-only SaaS',
-    description: "We have a Starter plan for ₦25k/month with a free sandbox. You don't need to book a demo to try POPFAB. Self-serve signup, instant sandbox, clear documentation.",
+    description: "You don't need to book a demo to begin exploring POPFAB. Start with the sandbox, review the documentation, and choose a plan that matches your payment volume.",
   },
   {
     heading: 'Not built in South Africa for Nigeria',
@@ -82,13 +82,13 @@ export default function AboutPage() {
 
             <div className="space-y-4">
               {[
-                { label: 'Founded', value: '2023', icon: '📅' },
-                { label: 'Launch markets', value: 'Lagos and Abuja', icon: '📍' },
-                { label: 'Providers connected', value: '6 live, 4 in testing', icon: '🔗' },
-                { label: 'Security', value: 'NDPR Compliant', icon: '🔒' },
+                { label: 'Founded', value: '2023', icon: 'calendar' },
+                { label: 'Launch markets', value: 'Lagos and Abuja', icon: 'pin' },
+                { label: 'Provider access', value: '7 available providers', icon: 'link' },
+                { label: 'Security', value: 'NDPR Compliant', icon: 'lock' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4 p-5 bg-[#f8fafc] rounded-2xl">
-                  <span className="text-2xl">{item.icon}</span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#5b5ce2]/10 text-[#5b5ce2]"><AboutIcon name={item.icon} /></span>
                   <div>
                     <p className="text-gray-400 text-xs font-medium uppercase tracking-wider">{item.label}</p>
                     <p className="text-[#0a0f1e] font-bold text-base">{item.value}</p>
@@ -146,7 +146,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((v) => (
               <div key={v.title} className="group p-8 border border-gray-100 rounded-2xl hover:border-[#4361ee]/30 hover:shadow-xl transition-all duration-300">
-                <div className="text-3xl mb-5">{v.icon}</div>
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#5b5ce2]/10 text-[#5b5ce2]"><AboutIcon name={v.icon} /></div>
                 <h3 className="font-bold text-[#0a0f1e] text-xl mb-4">{v.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{v.description}</p>
               </div>
@@ -190,4 +190,18 @@ export default function AboutPage() {
       </section>
     </>
   );
+}
+
+function AboutIcon({ name }: { name: string }) {
+  const paths: Record<string, string> = {
+    search: 'm21 21-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z',
+    globe: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm-9-9h18M12 3c2.1 2.46 3.16 5.46 3.16 9S14.1 18.54 12 21c-2.1-2.46-3.16-5.46-3.16-9S9.9 5.46 12 3Z',
+    code: 'm8 9-3 3 3 3m8-6 3 3-3 3m-2-10-4 16',
+    shield: 'M12 3 5 6v5c0 4.5 2.9 8.33 7 10 4.1-1.67 7-5.5 7-10V6l-7-3Zm-3 9 2 2 4-4',
+    calendar: 'M7 3v3m10-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z',
+    pin: 'M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',
+    link: 'M10 13a5 5 0 0 0 7.07.07l2-2A5 5 0 0 0 12 4l-1.15 1.15M14 11a5 5 0 0 0-7.07-.07l-2 2A5 5 0 0 0 12 20l1.15-1.15',
+    lock: 'M6 11h12v9H6v-9Zm3 0V8a3 3 0 0 1 6 0v3',
+  };
+  return <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d={paths[name]} /></svg>;
 }

@@ -6,48 +6,48 @@ const industries = [
   {
     id: 'fintech',
     label: 'Fintech & Startups',
-    icon: '⚡',
-    pain: 'You need to maintain 99.9%+ uptime and launch new payment methods fast, without building the infrastructure yourself.',
-    solution: 'POPFAB handles provider complexity for you. Launch with a single connection. Add Paystack, Flutterwave, and Monnify as fallbacks with zero additional overhead.',
-    outcome: 'Reduce time to payment integration from weeks to days. Achieve 99.95% uptime without managing multiple PSP relationships.',
-    metric: '6 months → 2 weeks',
-    metricLabel: 'Time to go live',
+    icon: 'bolt',
+    pain: 'You need to launch payment methods quickly without turning provider management into a separate infrastructure project.',
+    solution: 'POPFAB gives your team a single connection and a clear way to manage the providers enabled for your business.',
+    outcome: 'Create a simpler foundation for shipping payment experiences and evolving your provider strategy.',
+    metric: 'One API',
+    metricLabel: 'Integration surface',
     highlight: 'Instant onboarding',
     highlightColor: 'bg-[#4361ee]/10 text-[#4361ee] border border-[#4361ee]/20',
   },
   {
     id: 'ecommerce',
     label: 'E-commerce',
-    icon: '🛒',
-    pain: 'Cart abandonment spikes every time a payment provider has downtime. You\'re losing ₦500k+ per hour during peak shopping periods when Paystack or Flutterwave degrades.',
-    solution: 'POPFAB automatically routes to the fastest, most reliable provider in real time. If Paystack degrades, traffic shifts to Flutterwave or Monnify in under 800ms, invisible to your customers.',
-    outcome: '12% reduction in cart abandonment. 8 percentage point increase in payment success rates. Full payment continuity during provider outages.',
-    metric: '+12%',
-    metricLabel: 'Checkout conversion',
-    highlight: '<800ms failover',
+    icon: 'bag',
+    pain: 'Cart abandonment can rise when a payment path is unreliable or your customers do not see their preferred payment method.',
+    solution: 'POPFAB helps you configure the provider and payment-method paths that best fit your checkout experience.',
+    outcome: 'Give customers a more dependable checkout experience while keeping payment operations in one place.',
+    metric: 'More choice',
+    metricLabel: 'At checkout',
+    highlight: 'Provider flexibility',
     highlightColor: 'bg-[#4361ee]/10 text-[#4361ee] border border-[#4361ee]/20',
   },
   {
     id: 'saas',
     label: 'SaaS & Subscriptions',
-    icon: '🔄',
+    icon: 'repeat',
     pain: 'Failed recurring payments are costing you revenue. Card declines, bank transfer failures, and USSD timeouts create involuntary churn that your team spends hours manually resolving.',
-    solution: 'POPFAB\'s smart retry logic automatically retries failed subscription payments across providers. If a card fails on Paystack, we retry via Flutterwave with intelligent timing based on failure reason.',
-    outcome: 'Recover 68% of initially failed recurring payments. Reduce involuntary churn by 4.2 percentage points. Eliminate manual payment recovery workflows.',
-    metric: '68%',
-    metricLabel: 'Failed payments recovered',
-    highlight: 'Smart retry logic',
+    solution: 'POPFAB gives your team one place to observe recurring-payment outcomes across the providers you use and design the workflows that follow.',
+    outcome: 'Give your team a consistent way to track recurring-payment outcomes and refine payment recovery workflows.',
+    metric: 'Clearer flows',
+    metricLabel: 'For payment recovery',
+    highlight: 'Unified visibility',
     highlightColor: 'bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20',
   },
   {
     id: 'enterprise',
     label: 'Enterprise',
-    icon: '🏢',
-    pain: 'You\'re processing hundreds of millions of naira monthly across 3+ PSPs, with finance teams spending 40+ hours monthly on reconciliation. Each provider has a different CSV format, different settlement cycles, different dispute processes.',
+    icon: 'building',
+    pain: 'Multiple PSPs bring different data formats, settlement cycles, and dispute processes—creating avoidable complexity for finance teams.',
     solution: 'POPFAB unifies every transaction across all providers into a single ledger. One reconciliation file. One settlement timeline. One dispute management interface. Built for treasury teams who need auditability.',
-    outcome: 'Reduce reconciliation time from 40 hours to under 4 hours monthly. Single source of truth for all payment data. Full audit trail for regulatory reporting.',
-    metric: '90%',
-    metricLabel: 'Reconciliation time saved',
+    outcome: 'Create a single source of truth for payment data, reconciliation, and reporting workflows.',
+    metric: 'One workspace',
+    metricLabel: 'For payment operations',
     highlight: 'Unified ledger',
     highlightColor: 'bg-orange-500/10 text-orange-500 border border-orange-500/20',
   },
@@ -71,7 +71,7 @@ export default function IndustryTabs() {
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200 shadow-none'
             }`}
           >
-            <span className="mr-2">{industry.icon}</span>
+            <span className="mr-2 inline-flex align-[-0.15em]"><IndustryIcon name={industry.icon} /></span>
             {industry.label}
           </button>
         ))}
@@ -121,4 +121,14 @@ export default function IndustryTabs() {
       </div>
     </div>
   );
+}
+
+function IndustryIcon({ name }: { name: string }) {
+  const paths: Record<string, string> = {
+    bolt: 'M13 2 3 14h8l-1 8 10-12h-8l1-8Z',
+    bag: 'M6 8h12l1 12H5L6 8Zm3 0a3 3 0 0 1 6 0',
+    repeat: 'm17 2 4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 0 1-3 3H3',
+    building: 'M4 21V5l8-3 8 3v16M8 9h.01M8 13h.01M16 9h.01M16 13h.01M10 21v-4h4v4',
+  };
+  return <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d={paths[name]} /></svg>;
 }

@@ -16,15 +16,8 @@ const footerLinks = {
   ],
   Company: [
     { label: 'About', href: '/about' },
-    { label: 'Blog', href: '/about' },
-    { label: 'Careers', href: '/about' },
-    { label: 'Contact', href: '/about' },
-  ],
-  Legal: [
-    { label: 'Privacy Policy', href: '/legal' },
-    { label: 'Terms of Service', href: '/legal' },
-    { label: 'AML Policy', href: '/legal' },
-    { label: 'NDPR Compliance', href: '/legal' },
+    { label: 'Provider network', href: '/providers' },
+    { label: 'Pricing', href: '/pricing' },
   ],
 };
 
@@ -32,7 +25,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0f1e] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
@@ -46,7 +39,11 @@ export default function Footer() {
             <p className="text-white/40 text-sm leading-relaxed mb-5">
               Payment orchestration for African businesses.
             </p>
-            <div className="flex items-center gap-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#72d6b4]" />
+              <span className="text-xs font-medium text-white/55">Built for African payments</span>
+            </div>
+            <div className="hidden">
               <a
                 href="https://twitter.com"
                 className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"

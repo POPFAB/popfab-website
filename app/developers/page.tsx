@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import CodeBlock from '@/components/CodeBlock';
 
 type Lang = 'node' | 'python' | 'go' | 'php';
@@ -106,13 +105,6 @@ $payment = $client->payments->initiate([
 ]);
 
 echo $payment->data->payment_url; // Redirect user here`,
-};
-
-const installCommands: Record<Lang, string> = {
-  node: 'npm install @popfab/node',
-  python: 'pip install popfab',
-  go: 'go get popfab.dev/sdk',
-  php: 'composer require popfab/php',
 };
 
 const langLabels: Record<Lang, string> = {
