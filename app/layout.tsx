@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'POPFAB — Payment Orchestration for African Businesses',
   icons: { icon: '/images/popfab-logo.png', apple: '/images/popfab-logo.png' },
   description:
-    'One API to route payments across Paystack, Flutterwave, Monnify, Squad, Interswitch, and Payaza. Automatic failover, smart routing, and unified analytics.',
+    'One API to route payments across ALATPay, Paystack, Flutterwave, Monnify, Squad, Interswitch, and Payaza. Automatic failover, smart routing, and unified analytics.',
   keywords:
     'payment orchestration, Nigeria, Africa, Paystack, Flutterwave, Monnify, Squad, Interswitch, payment API',
   openGraph: {

@@ -38,7 +38,7 @@ const notList = [
   },
   {
     heading: 'Not built in South Africa for Nigeria',
-    description: "POPFAB is built by Nigerians, in Lagos, for the Nigerian market first. We understand the CBN regulatory environment, the GTBank/Access/Zenith banking dynamics, and why USSD still matters.",
+    description: "POPFAB is built by Nigerians for the Nigerian market first. We understand the CBN regulatory environment, GTBank/Access/Zenith banking dynamics, state-by-state merchant realities, and why USSD still matters.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function AboutPage() {
       <section className="bg-[#0a0f1e] pt-28 pb-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-8">
-            <span className="text-white/60 text-sm font-medium">Built in Lagos</span>
+            <span className="text-white/60 text-sm font-medium">Built for Nigeria · Starting in Lagos and Abuja</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
             Nigerian-built. Pan-African mission.
@@ -83,7 +83,7 @@ export default function AboutPage() {
             <div className="space-y-4">
               {[
                 { label: 'Founded', value: '2023', icon: '📅' },
-                { label: 'Headquarters', value: 'Lagos, Nigeria', icon: '📍' },
+                { label: 'Launch markets', value: 'Lagos and Abuja', icon: '📍' },
                 { label: 'Providers connected', value: '6 live, 4 in testing', icon: '🔗' },
                 { label: 'Security', value: 'NDPR Compliant', icon: '🔒' },
               ].map((item) => (

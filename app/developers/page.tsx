@@ -320,7 +320,7 @@ export default function DevelopersPage() {
                 <span className="text-white/60 text-sm font-medium">For developers, by developers</span>
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-                One SDK. All six providers. Ship in a day.
+                One SDK. All seven providers. Ship in a day.
               </h1>
               <p className="text-white/60 text-xl mb-8 leading-relaxed">
                 Replace 6 PSP integrations with one. TypeScript-first, fully typed, OpenAPI-backed. Your sandbox is live in 60 seconds.

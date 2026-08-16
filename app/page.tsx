@@ -3,7 +3,8 @@ import Link from 'next/link';
 import CodeBlock from '@/components/CodeBlock';
 import IndustryTabs from '@/components/IndustryTabs';
 
-const providers = [
+const providers: Array<{ name: string; logo: string; description: string; logoText?: string }> = [
+  { name: 'ALATPay', logo: '/images/alatpay.png', description: 'Card · Bank Transfer · Virtual Accounts' },
   { name: 'Paystack', logo: '/images/paystack-logo.png', description: 'Card · Bank Transfer · USSD' },
   { name: 'Flutterwave', logo: '/images/flutterwave-logo.png', description: 'Card · Bank · Mobile Money' },
   { name: 'Monnify', logo: '/images/monnify-logo.png', description: 'Bank Transfer · USSD' },
@@ -65,7 +66,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-center text-white/50 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Route payments across Paystack, Flutterwave, Monnify, Squad, Interswitch, and Payaza with automatic failover. One integration. Zero downtime.
+            Route payments across ALATPay, Paystack, Flutterwave, Monnify, Squad, Interswitch, and Payaza with automatic failover. One integration. Zero downtime.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
@@ -94,14 +95,7 @@ export default function HomePage() {
                   key={p.name}
                   className="bg-white rounded-xl p-3 flex items-center justify-center aspect-square"
                 >
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={p.logo}
-                      alt={p.name}
-                      fill
-                      className="object-contain p-1"
-                    />
-                  </div>
+                  {p.logo ? <div className="relative w-full h-full"><Image src={p.logo} alt={p.name} fill sizes="80px" className="object-contain p-1" /></div> : <span className="text-sm font-bold tracking-tight text-[#1d4ed8]">{p.logoText}</span>}
                 </div>
               ))}
             </div>
@@ -132,7 +126,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="space-y-2">
-                {['Your App', 'Paystack SDK', 'Flutterwave SDK', 'Monnify SDK'].map((item, i) => (
+                {['Your App', 'ALATPay SDK', 'Paystack SDK', 'Monnify SDK'].map((item, i) => (
                   <div key={item}>
                     <div className={`flex items-center gap-3 p-3 rounded-xl ${i === 0 ? 'bg-red-200 border border-red-300' : 'bg-white border border-red-100'}`}>
                       <span className={`text-sm font-medium ${i === 0 ? 'text-red-900' : 'text-gray-500'}`}>{item}</span>
@@ -183,9 +177,7 @@ export default function HomePage() {
                 <div className="grid grid-cols-3 gap-2">
                   {providers.slice(0, 3).map((p) => (
                     <div key={p.name} className="bg-white border border-gray-200 rounded-xl p-3 flex items-center justify-center">
-                      <div className="relative w-full h-8">
-                        <Image src={p.logo} alt={p.name} fill className="object-contain" />
-                      </div>
+                      {p.logo ? <div className="relative h-8 w-full"><Image src={p.logo} alt={p.name} fill sizes="120px" className="object-contain" /></div> : <span className="text-xs font-bold tracking-tight text-[#1d4ed8]">{p.logoText}</span>}
                     </div>
                   ))}
                 </div>
@@ -274,7 +266,7 @@ export default function HomePage() {
               Works with every provider your customers trust.
             </h2>
             <p className="text-gray-400 text-base mt-3 max-w-xl mx-auto">
-              All 6 major Nigerian payment providers connected, tested, and production-ready.
+              All 7 major Nigerian payment providers connected, tested, and production-ready.
             </p>
           </div>
 
@@ -284,14 +276,7 @@ export default function HomePage() {
                 key={p.name}
                 className="bg-white border border-gray-200 hover:border-[#4361ee]/40 rounded-2xl p-5 hover:shadow-md transition-all duration-200 flex flex-col items-center gap-3"
               >
-                <div className="relative w-full h-10">
-                  <Image
-                    src={p.logo}
-                    alt={p.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+                {p.logo ? <div className="relative h-10 w-full"><Image src={p.logo} alt={p.name} fill sizes="160px" className="object-contain" /></div> : <div className="flex h-10 items-center justify-center text-base font-bold tracking-tight text-[#1d4ed8]">{p.logoText}</div>}
                 <div className="text-center">
                   <div className="font-semibold text-[#0a0f1e] text-sm">{p.name}</div>
                   <div className="flex items-center justify-center gap-1 mt-1">

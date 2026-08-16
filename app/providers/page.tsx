@@ -1,7 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const liveProviders = [
+const liveProviders: Array<{ name: string; logo?: string; logoText?: string; flags: string[]; countries: string[]; methods: string[]; description: string; uptime: string; avgLatency: string }> = [
+  {
+    name: 'ALATPay',
+    logo: '/images/alatpay.png',
+    flags: ['🇳🇬'],
+    countries: ['Nigeria'],
+    methods: ['Card Payments', 'Bank Transfer', 'Virtual Accounts', 'Webhooks'],
+    description: 'Wema Bank’s payment platform for card and bank-transfer collections, virtual accounts, transaction monitoring, and settlements.',
+    uptime: '—',
+    avgLatency: '—',
+  },
   {
     name: 'Paystack',
     logo: '/images/paystack-logo.png',
@@ -96,7 +106,7 @@ const comingSoon = [
 ];
 
 const coverageData = [
-  { country: 'Nigeria', flag: '🇳🇬', providers: 6, methods: 12, status: 'Full coverage' },
+  { country: 'Nigeria', flag: '🇳🇬', providers: 7, methods: 12, status: 'Full coverage' },
   { country: 'Ghana', flag: '🇬🇭', providers: 2, methods: 5, status: 'Partial, expanding' },
   { country: 'Kenya', flag: '🇰🇪', providers: 2, methods: 4, status: 'Partial, expanding' },
   { country: 'Uganda', flag: '🇺🇬', providers: 1, methods: 2, status: 'Limited' },
@@ -112,7 +122,7 @@ export default function ProvidersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6">
             <div className="w-2 h-2 rounded-full bg-[#10b981] live-dot flex-shrink-0" />
-            <span className="text-white/60 text-sm font-medium">6 providers live · 4 coming soon</span>
+            <span className="text-white/60 text-sm font-medium">7 providers live · 4 coming soon</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
             Works with every provider your customers trust.
@@ -129,7 +139,7 @@ export default function ProvidersPage() {
           <div className="mb-10">
             <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">Live Providers</span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#0a0f1e] mt-2">
-              6 providers. All live. All tested.
+              7 providers. All live. All tested.
             </h2>
           </div>
 
@@ -138,14 +148,7 @@ export default function ProvidersPage() {
               <div key={p.name} className="bg-white border border-gray-200 hover:border-[#4361ee]/40 rounded-2xl p-6 hover:shadow-md transition-all duration-200">
                 <div className="flex items-start justify-between mb-4">
                   <div className="bg-gray-50 rounded-xl p-3 flex items-center justify-center w-16 h-12">
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={p.logo}
-                        alt={p.name}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
+                    {p.logo ? <div className="relative h-full w-full"><Image src={p.logo} alt={p.name} fill sizes="64px" className="object-contain" /></div> : <span className="text-sm font-bold tracking-tight text-[#1d4ed8]">{p.logoText}</span>}
                   </div>
                   <div className="flex items-center gap-1.5 bg-[#10b981]/10 rounded-full px-2.5 py-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#10b981] live-dot flex-shrink-0" />
@@ -266,7 +269,7 @@ export default function ProvidersPage() {
       <section className="py-16 bg-[#f8f9fb]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0a0f1e] mb-4">
-            Build with all 6 providers today
+            Build with all 7 providers today
           </h2>
           <p className="text-gray-500 mb-8">
             One integration gives you access to every live provider. Automatic failover between all of them.
