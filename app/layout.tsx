@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
@@ -35,6 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className="site-shell min-h-screen flex flex-col bg-white text-[#0a0f1e]">
+        <Script id="google-analytics-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-P6Z86LFQJP');`,
+        }} />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-P6Z86LFQJP" strategy="afterInteractive" />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
