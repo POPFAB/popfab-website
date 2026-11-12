@@ -1,278 +1,104 @@
-'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-const creditPacks = [
-  {
-    credits: '1,000',
-    amountKobo: 250_000,
-    price: '2,500',
-    checkouts: '500',
-    perCheckout: '₦5.00',
-    note: 'Great for testing after free tier',
-    isPopular: false,
+export const metadata: Metadata = {
+  title: 'Pricing | POPFAB payment orchestration',
+  description: 'Review POPFAB’s credit packs, usage pricing and included payment operations tools.',
+  openGraph: {
+    title: 'POPFAB pricing',
+    description: 'See how POPFAB credit pricing works and compare available credit packs.',
   },
-  {
-    credits: '10,000',
-    amountKobo: 2_500_000,
-    price: '25,000',
-    checkouts: '5,000',
-    perCheckout: '₦5.00',
-    note: 'Ideal for growing businesses',
-    isPopular: true,
-  },
-  {
-    credits: '50,000',
-    amountKobo: 12_500_000,
-    price: '125,000',
-    checkouts: '25,000',
-    perCheckout: '₦5.00',
-    note: 'High-volume operations',
-    isPopular: false,
-  },
+};
+
+const packs = [
+  { credits: '1,000', price: '2,500', checkouts: '500' },
+  { credits: '10,000', price: '25,000', checkouts: '5,000', popular: true },
+  { credits: '50,000', price: '125,000', checkouts: '25,000' },
 ];
 
-const featureRows = [
-  { label: 'Provider connections', value: 'Available providers, with rollout status shown clearly' },
-  { label: 'Routing controls', value: 'Configured to your enabled provider set' },
-  { label: 'Smart routing', value: 'Yes, AI-powered' },
-  { label: 'Webhook delivery', value: 'Yes, all event types' },
-  { label: 'Unified analytics', value: 'Real-time dashboard' },
-  { label: 'Reconciliation', value: 'Automated, all providers' },
-  { label: 'API rate limit', value: 'Generous defaults · contact for higher' },
-  { label: 'Support', value: 'Email + docs · priority for high volume' },
-  { label: 'Sandbox', value: 'Free forever, no credits consumed' },
-];
-
+const included = ['Provider connections enabled for your account', 'Routing configuration', 'Payment event webhooks', 'Unified payment activity', 'Sandbox access'];
 
 export default function PricingPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-[#0a0f1e] pt-28 pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6">
-            <span className="text-white/60 text-sm font-medium">Transparent NGN pricing · No monthly fees · No lock-in</span>
+    <div className="bg-white text-[#10122a]">
+      <section className="border-b border-[#ececf2] bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Pricing</p>
+          <div className="mt-5 grid gap-8 md:grid-cols-[1.1fr_.9fr] md:items-end">
+            <h1 className="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-.045em] sm:text-6xl">Straightforward pricing that scales with your usage.</h1>
+            <p className="max-w-lg text-base leading-7 text-[#626477]">Start in sandbox, then use prepaid credits for eligible payment processing. No monthly subscription is shown in this pricing model.</p>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
-            Pay per checkout. Not per month.
-          </h1>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            Your first ₦100M in processed volume is free. After that, pre-purchase credits and spend them as you grow.
-          </p>
         </div>
       </section>
 
-      {/* How it works — 3 steps */}
-      <section className="py-16 bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {[
-              {
-                step: '1',
-                title: 'Free tier',
-                desc: 'Route your first ₦100M in payment volume at zero cost. No credit card required.',
-                highlight: '₦100M free',
-              },
-              {
-                step: '2',
-                title: 'Buy credits',
-                desc: 'Once your free tier is exhausted, pre-purchase credits. 1 credit = ₦2.50. Credits never expire.',
-                highlight: '₦2.50 per credit',
-              },
-              {
-                step: '3',
-                title: 'Pay per checkout',
-                desc: 'Each completed checkout deducts 2 credits (₦5.00).',
-                highlight: '₦5.00 per checkout',
-              },
-            ].map((item) => (
-              <div key={item.step} className="flex flex-col items-start">
-                <div className="w-8 h-8 rounded-full bg-[#4361ee] text-white text-sm font-bold flex items-center justify-center mb-4 flex-shrink-0">
-                  {item.step}
-                </div>
-                <div className="inline-block bg-[#4361ee]/10 text-[#4361ee] text-xs font-bold px-2.5 py-1 rounded-full mb-3">
-                  {item.highlight}
-                </div>
-                <h3 className="font-bold text-[#0a0f1e] text-base mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+      <section className="py-16 sm:py-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.84), rgba(255,255,255,.88)), url('/images/pricing-merchant.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr]">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">How billing works</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-.035em]">Know what a credit covers.</h2>
+              <p className="mt-4 text-sm leading-6 text-[#6b6d7d]">The displayed rate is ₦2.50 per credit. A completed checkout uses 2 credits (₦5.00). Eligible accounts also receive the first ₦100 million in processed volume at no charge, according to the current POPFAB pricing policy.</p>
+              <p className="mt-4 text-xs leading-5 text-[#8b8d9b]">Provider fees and availability are governed by your provider agreement and account configuration. Confirm your account’s current billing terms before going live.</p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                { step: '01', title: 'Explore', body: 'Use sandbox to integrate and test without consuming live credits.' },
+                { step: '02', title: 'Top up', body: 'Choose a credit pack and add balance when you are ready.' },
+                { step: '03', title: 'Process', body: 'Credits are deducted as eligible checkouts are completed.' },
+              ].map((item) => <article key={item.step} className="border-t border-[#d9d9e4] pt-4">
+                <span className="text-xs font-semibold tracking-wider text-[#9697a8]">{item.step}</span>
+                <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#6b6d7d]">{item.body}</p>
+              </article>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-[#ececf2] bg-[#fafafd] py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-9 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Credit packs</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-.035em]">Pick a starting balance.</h2>
+            </div>
+            <p className="text-sm text-[#77798a]">All packs use the same ₦2.50 per-credit rate.</p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {packs.map((pack) => <article key={pack.credits} className={`relative flex flex-col rounded-2xl border bg-white p-6 sm:p-7 ${pack.popular ? 'border-[#5b5ce2] shadow-[0_16px_40px_rgba(91,92,226,.10)]' : 'border-[#e6e6ee]'}`}>
+              {pack.popular && <span className="mb-4 self-start rounded-full bg-[#efefff] px-3 py-1 text-xs font-semibold text-[#5051c7]">Popular starting point</span>}
+              <p className="text-sm font-medium text-[#77798a]">{pack.credits} credits</p>
+              <p className="mt-2 text-3xl font-semibold tracking-[-.04em]">₦{pack.price}</p>
+              <div className="my-6 border-t border-[#ececf2] pt-4 text-sm text-[#626477]">
+                <div className="flex justify-between gap-4"><span>Estimated completed checkouts</span><strong className="text-[#25263c]">{pack.checkouts}</strong></div>
+                <div className="mt-3 flex justify-between gap-4"><span>Cost per completed checkout</span><strong className="text-[#25263c]">₦5.00</strong></div>
               </div>
-            ))}
+              <a href="https://developer.popfab.io" className={`mt-auto rounded-xl px-4 py-3 text-center text-sm font-semibold transition ${pack.popular ? 'bg-[#5b5ce2] text-white hover:bg-[#4546c8]' : 'border border-[#dfe0e9] text-[#25263c] hover:border-[#5b5ce2]'}`}>Get started</a>
+            </article>)}
           </div>
+          <p className="mt-5 text-xs leading-5 text-[#8b8d9b]">Checkout counts are estimates based on the current 2-credit rate and do not include provider charges or other account-specific fees.</p>
         </div>
       </section>
 
-      {/* Credit packs */}
-      <section className="py-16 bg-[#f8f9fb]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">Credit Packs</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0a0f1e] mt-2">Choose how many credits to start with</h2>
-            <p className="text-gray-400 text-sm mt-2">Buy any amount. Mix and match. Credits never expire.</p>
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 md:grid-cols-[.8fr_1.2fr] lg:px-10">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Included</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-[-.035em]">The tools around the payment.</h2>
+            <p className="mt-4 text-sm leading-6 text-[#6b6d7d]">Platform features are available according to your account permissions and enabled provider connections.</p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
-            {creditPacks.map((pack) => (
-              <div
-                key={pack.credits}
-                className={`relative rounded-2xl p-7 flex flex-col border-2 ${
-                  pack.isPopular
-                    ? 'border-[#4361ee] bg-white shadow-lg shadow-[#4361ee]/10'
-                    : 'border-gray-100 bg-white'
-                }`}
-              >
-                {pack.isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="bg-[#4361ee] text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
-                  </div>
-                )}
-                <div className="mb-5">
-                  <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-3xl font-bold text-[#0a0f1e]">{pack.credits}</span>
-                    <span className="text-gray-400 text-sm">credits</span>
-                  </div>
-                  <div className="flex items-baseline gap-0.5">
-                    <span className="text-gray-400 text-sm">₦</span>
-                    <span className="text-xl font-semibold text-[#0a0f1e]">{pack.price}</span>
-                  </div>
-                  <p className="text-gray-400 text-xs mt-1">{pack.note}</p>
-                </div>
-
-                <div className="space-y-2.5 mb-6 flex-1">
-                  <div className="flex items-center justify-between py-2 border-t border-gray-100">
-                    <span className="text-gray-500 text-sm">Checkouts covered</span>
-                    <span className="font-semibold text-[#0a0f1e] text-sm">{pack.checkouts}</span>
-                  </div>
-                  <div className="flex items-center justify-between py-2 border-t border-gray-100">
-                    <span className="text-gray-500 text-sm">Cost per checkout</span>
-                    <span className="font-semibold text-[#0a0f1e] text-sm">{pack.perCheckout}</span>
-                  </div>
-                  <div className="flex items-center justify-between py-2 border-t border-gray-100">
-                    <span className="text-gray-500 text-sm">Credits expire</span>
-                    <span className="font-semibold text-[#10b981] text-sm">Never</span>
-                  </div>
-                </div>
-
-                <a
-                  href="https://developer.popfab.io"
-                  className={`w-full py-3 rounded-xl font-semibold text-sm text-center transition-colors block ${
-                    pack.isPopular
-                      ? 'bg-[#4361ee] text-white hover:bg-[#3451de]'
-                      : 'border border-gray-200 text-[#0a0f1e] hover:border-[#4361ee] hover:text-[#4361ee]'
-                  }`}
-                >
-                  Buy credits
-                </a>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-center text-gray-400 text-sm">
-            Need a custom volume? <a href="/about" className="text-[#4361ee] hover:underline">Talk to us</a> about high-volume pricing.
-          </p>
+          <ul className="divide-y divide-[#ececf2] border-y border-[#ececf2]">
+            {included.map((item) => <li key={item} className="flex items-center gap-3 py-4 text-sm text-[#45465a]"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#efefff] text-[#5b5ce2]">✓</span>{item}</li>)}
+          </ul>
         </div>
       </section>
 
-      {/* What's included */}
-      <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">What&apos;s included</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0a0f1e] mt-2">Everything, for every merchant</h2>
-            <p className="text-gray-400 text-sm mt-2">There are no feature tiers. Every merchant gets the full platform.</p>
-          </div>
-
-          <div className="border border-gray-200 rounded-2xl overflow-hidden">
-            {featureRows.map((row, i) => (
-              <div
-                key={row.label}
-                className={`flex items-start gap-4 px-6 py-4 ${i < featureRows.length - 1 ? 'border-b border-gray-100' : ''}`}
-              >
-                <svg className="w-4 h-4 text-[#10b981] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                </svg>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-1">
-                  <span className="text-gray-700 text-sm font-medium">{row.label}</span>
-                  <span className="text-gray-500 text-sm sm:text-right">{row.value}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section className="bg-[#10122a] py-16 text-white sm:py-20">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 sm:px-8 md:flex-row md:items-end md:justify-between lg:px-10">
+          <div className="max-w-2xl"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#a8a8ff]">Ready when you are</p><h2 className="mt-4 text-3xl font-semibold tracking-[-.035em] sm:text-4xl">Start in sandbox. Move at your pace.</h2><p className="mt-4 text-sm leading-6 text-white/60">Read the developer documentation or talk with our team about your payment setup.</p></div>
+          <div className="flex flex-wrap gap-3"><a href="https://developer.popfab.io" className="rounded-xl bg-[#6a6bea] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#7979f5]">Open developer portal</a><Link href="/about" className="rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:bg-white/5">Contact POPFAB</Link></div>
         </div>
       </section>
-
-      {/* vs NjiaPay */}
-      <section className="py-16 bg-[#f8f9fb]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <span className="text-[#4361ee] text-xs font-semibold uppercase tracking-wider">Why POPFAB</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0a0f1e] mt-2">POPFAB vs. NjiaPay</h2>
-            <p className="text-gray-400 text-sm mt-2">Built for Nigeria, not adapted from South Africa.</p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 pr-6 text-gray-400 font-medium text-xs uppercase tracking-wider">Comparison</th>
-                  <th className="py-3 px-5 text-center text-xs font-bold text-[#4361ee] uppercase tracking-wider">POPFAB</th>
-                  <th className="py-3 px-5 text-center text-xs font-bold text-gray-400 uppercase tracking-wider">NjiaPay</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {[
-                  { feature: 'Pricing model', popfab: 'Credit-based, pay per checkout', njia: 'Monthly subscription + % fee' },
-                  { feature: 'Free tier', popfab: 'First ₦100M processed, free', njia: 'No free tier' },
-                  { feature: 'Monthly commitment', popfab: 'None — buy credits as needed', njia: 'R1,500 – R15,000/mo minimum' },
-                  { feature: 'Nigerian providers', popfab: '7 available providers', njia: '2 Nigerian providers' },
-                  { feature: 'Self-serve signup', popfab: 'Yes — sandbox in 60 seconds', njia: 'Book a demo required' },
-                  { feature: 'Routing controls', popfab: 'Provider-aware configuration', njia: 'Manual failover rules' },
-                  { feature: 'Reconciliation', popfab: 'Auto-generated, all providers', njia: 'Manual per-provider CSV' },
-                ].map((row) => (
-                  <tr key={row.feature} className="hover:bg-white transition-colors">
-                    <td className="py-3.5 pr-6 text-sm text-gray-600 font-medium">{row.feature}</td>
-                    <td className="py-3.5 px-5 text-center">
-                      <span className="inline-flex items-center justify-center gap-1.5 text-sm text-[#4361ee] font-medium">
-                        <svg className="w-3.5 h-3.5 text-[#10b981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {row.popfab}
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-5 text-center text-sm text-gray-400">{row.njia}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-[#0a0f1e]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Start free. Scale as you grow.
-          </h2>
-          <p className="text-white/50 text-base mb-8 max-w-xl mx-auto">
-            Your first ₦100M of processed volume costs nothing. No credit card, no sales call, no waiting.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="https://developer.popfab.io"
-              className="w-full sm:w-auto bg-[#4361ee] hover:bg-[#3451de] text-white px-8 py-3.5 rounded-lg font-semibold text-sm transition-colors"
-            >
-              Start Building Free
-            </a>
-            <Link
-              href="/about"
-              className="w-full sm:w-auto border border-white/20 hover:border-white/40 text-white/80 hover:text-white px-8 py-3.5 rounded-lg font-semibold text-sm transition-colors text-center"
-            >
-              Talk to Sales
-            </Link>
-          </div>
-          <p className="text-white/20 text-xs mt-5">Sandbox is free forever · Credits never expire · No monthly minimums</p>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }

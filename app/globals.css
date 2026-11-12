@@ -108,6 +108,27 @@ a, button {
   50% { opacity: 0.4; }
 }
 
+@keyframes provider-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.provider-marquee-track {
+  animation: provider-marquee 28s linear infinite;
+}
+
+.provider-marquee:hover .provider-marquee-track,
+.provider-marquee:focus-within .provider-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .provider-marquee-track {
+    animation: none;
+    transform: none;
+  }
+}
+
 .live-dot {
   animation: pulse-green 2s ease-in-out infinite;
 }

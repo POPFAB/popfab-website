@@ -130,7 +130,7 @@ const quickstart = [
   {
     step: '02',
     title: 'Get your API key',
-    description: 'Create a free account and copy your test API key from the dashboard. No KYC required in sandbox.',
+    description: 'Create a test API key from the dashboard and keep it in your local environment while you integrate.',
     code: {
       node: `// In your dashboard: Settings → API Keys
 // Copy your test key: sk_test_xxxxxxxxxxxx
@@ -160,7 +160,7 @@ $client = new Client($_ENV['POPFAB_API_KEY']);`,
   {
     step: '03',
     title: 'Initiate your first payment',
-    description: 'Make your first API call. POPFAB selects the best provider, handles failover, and returns a payment URL.',
+    description: 'Submit a payment request and use the payment URL returned in the API response.',
     code: {
       node: `const payment = await client.payments.initiate({
   amount: 10000, // ₦100 in kobo
@@ -218,8 +218,8 @@ const devCallouts = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: '60-sec sandbox',
-    description: 'Sign up, get your test API key, and make your first API call, all in under 60 seconds. No KYC, no approval required.',
+    title: 'Sandbox access',
+    description: 'Create a test key and exercise the payment flow before switching to a live configuration.',
     color: 'bg-[#10b981]/10',
   },
   {
@@ -228,8 +228,8 @@ const devCallouts = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: '<500ms response',
-    description: 'Our API responds in under 500ms globally. Provider routing decisions are made in under 100ms using our routing engine.',
+    title: 'A consistent API',
+    description: 'Use a shared request and response shape when working with the providers enabled for your account.',
     color: 'bg-[#4361ee]/10',
   },
   {
@@ -238,19 +238,9 @@ const devCallouts = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
       </svg>
     ),
-    title: 'Human-readable errors',
-    description: 'Every error includes a code, a human message, and a link to the relevant docs section. No cryptic status codes.',
+    title: 'Error details',
+    description: 'Use the HTTP status, response body and API reference to diagnose validation and integration issues.',
     color: 'bg-[#4361ee]/10',
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6 text-[#f5a623]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-      </svg>
-    ),
-    title: 'Webhook inspector',
-    description: 'Test webhook delivery in sandbox with our built-in inspector. See payloads, retry failed deliveries, replay events.',
-    color: 'bg-[#f5a623]/10',
   },
   {
     icon: (
@@ -268,8 +258,8 @@ const devCallouts = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
       </svg>
     ),
-    title: 'Zero cold-start',
-    description: 'All POPFAB API endpoints are warm 100% of the time. No serverless cold-start delays. Consistent sub-500ms responses.',
+    title: 'Webhook event reference',
+    description: 'Review event names and example payloads before building your webhook handler.',
     color: 'bg-[#10b981]/10',
   },
 ];
@@ -304,18 +294,18 @@ export default function DevelopersPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#0a0f1e] pt-28 pb-20">
+      <section className="border-b border-[#ececf2] bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-20" style={{ backgroundImage: "linear-gradient(rgba(247,247,251,.84), rgba(247,247,251,.88)), url('/images/developer-at-work.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6">
-                <span className="text-white/60 text-sm font-medium">For developers, by developers</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#dedff2] bg-white px-4 py-2 mb-6">
+                <span className="text-[#5b5ce2] text-xs font-semibold uppercase tracking-wider">Developer resources</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-                One SDK. All seven providers. Ship in a day.
+              <h1 className="text-4xl sm:text-5xl font-semibold tracking-[-.04em] text-[#10122a] mb-5 leading-[1.08]">
+                One API for the providers you choose.
               </h1>
-              <p className="text-white/60 text-xl mb-8 leading-relaxed">
-                Replace 6 PSP integrations with one. TypeScript-first, fully typed, OpenAPI-backed. Your sandbox is live in 60 seconds.
+              <p className="text-[#626477] text-lg mb-8 leading-relaxed">
+                Build against one payment API, explore the sandbox, and keep provider-specific work out of your application flow.
               </p>
 
               {/* Language selector */}
@@ -327,7 +317,7 @@ export default function DevelopersPage() {
                     className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                       lang === l
                         ? 'bg-[#4361ee] text-white shadow-lg'
-                        : 'bg-white/10 text-white/60 hover:text-white hover:bg-white/20'
+                        : 'bg-white text-[#626477] border border-[#e6e6ee] hover:text-[#10122a] hover:bg-[#f1f1f8]'
                     }`}
                   >
                     {langLabels[l]}
@@ -344,7 +334,7 @@ export default function DevelopersPage() {
                 </a>
                 <a
                   href="#docs"
-                  className="border border-white/20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/5 transition-colors"
+                  className="border border-[#dfe0e9] text-[#34354b] px-6 py-3 rounded-xl font-semibold hover:border-[#5b5ce2] transition-colors"
                 >
                   API Reference
                 </a>
@@ -365,10 +355,10 @@ export default function DevelopersPage() {
       {/* Quick-start */}
       <section id="docs" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">Quick Start</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0a0f1e] mt-3">
-              From zero to live payment in 3 steps.
+              Make your first sandbox payment in 3 steps.
             </h2>
           </div>
 
@@ -384,22 +374,6 @@ export default function DevelopersPage() {
                   </div>
                   <p className="text-gray-600 text-base leading-relaxed mb-6 ml-16">{step.description}</p>
 
-                  {/* Language tabs for quickstart */}
-                  <div className="flex flex-wrap gap-2 mb-4 ml-16">
-                    {(Object.keys(langLabels) as Lang[]).map((l) => (
-                      <button
-                        key={l}
-                        onClick={() => setLang(l)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                          lang === l
-                            ? 'bg-[#4361ee] text-white'
-                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                        }`}
-                      >
-                        {langLabels[l]}
-                      </button>
-                    ))}
-                  </div>
                 </div>
                 <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
                   <CodeBlock
@@ -419,16 +393,16 @@ export default function DevelopersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">SDKs</span>
-            <h2 className="text-3xl font-bold text-[#0a0f1e] mt-3">Available in your language</h2>
-            <p className="text-gray-500 mt-3">All SDKs auto-generated from OpenAPI spec. Always up-to-date.</p>
+            <h2 className="text-3xl font-bold text-[#0a0f1e] mt-3">Use your preferred language</h2>
+            <p className="text-gray-500 mt-3">Check the developer portal for current SDK packages and setup instructions.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { lang: 'Node.js', install: 'npm install @popfab/node', pkg: 'npm', color: '#339933', abbr: 'JS', version: 'v2.4.1', weekly: '14.2k' },
-              { lang: 'Python', install: 'pip install popfab', pkg: 'pip', color: '#3572A5', abbr: 'Py', version: 'v2.4.1', weekly: '6.8k' },
-              { lang: 'Go', install: 'go get popfab.dev/sdk', pkg: 'go', color: '#00ADD8', abbr: 'Go', version: 'v2.4.1', weekly: '2.1k' },
-              { lang: 'PHP', install: 'composer require popfab/php', pkg: 'composer', color: '#777BB3', abbr: 'PHP', version: 'v2.4.1', weekly: '3.4k' },
+              { lang: 'Node.js', install: 'npm install @popfab/node', pkg: 'npm', color: '#339933', abbr: 'JS' },
+              { lang: 'Python', install: 'pip install popfab', pkg: 'pip', color: '#3572A5', abbr: 'Py' },
+              { lang: 'Go', install: 'go get popfab.dev/sdk', pkg: 'go', color: '#00ADD8', abbr: 'Go' },
+              { lang: 'PHP', install: 'composer require popfab/php', pkg: 'composer', color: '#777BB3', abbr: 'PHP' },
             ].map((sdk) => (
               <div key={sdk.lang} className="bg-white border border-gray-200 rounded-2xl p-7 hover:border-[#4361ee]/40 hover:shadow-xl transition-all">
                 <div className="flex items-center gap-3 mb-5">
@@ -437,16 +411,13 @@ export default function DevelopersPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#0a0f1e] text-sm">{sdk.lang}</h3>
-                    <p className="text-gray-400 text-xs">{sdk.version}</p>
+                    <p className="text-gray-400 text-xs">SDK</p>
                   </div>
                 </div>
                 <div className="bg-gray-950 rounded-xl p-3 mb-4">
                   <code className="text-green-400 text-xs font-mono">$ {sdk.install}</code>
                 </div>
-                <div className="flex items-center justify-between text-xs text-gray-400">
-                  <span>{sdk.pkg}</span>
-                  <span>{sdk.weekly} downloads/wk</span>
-                </div>
+                <div className="text-xs text-gray-400">Install with {sdk.pkg}</div>
               </div>
             ))}
           </div>
@@ -458,7 +429,7 @@ export default function DevelopersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">DX</span>
-            <h2 className="text-3xl font-bold text-[#0a0f1e] mt-3">A developer experience that respects your time</h2>
+            <h2 className="text-3xl font-bold text-[#0a0f1e] mt-3">Tools for building and debugging</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -485,7 +456,7 @@ export default function DevelopersPage() {
                 Build webhook handlers with confidence.
               </h2>
               <p className="text-white/60 mb-8 leading-relaxed">
-                POPFAB delivers webhooks for every payment event. Our sandbox webhook inspector lets you test handlers before going live: replay events, inspect payloads, and simulate failures.
+                Build a handler around POPFAB payment events, then test the behavior in your sandbox environment.
               </p>
 
               <div className="space-y-4">
@@ -534,17 +505,16 @@ export default function DevelopersPage() {
             Your sandbox is waiting.
           </h2>
           <p className="text-white/80 text-xl mb-8">
-            60 seconds from now, you could have your first test payment running.
+            Start with the API guide and make a test request in your sandbox.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://developer.popfab.io" className="bg-white text-[#4361ee] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors">
-              Get API Key free
+              Get a test API key
             </a>
             <a href="https://developer.popfab.io/docs" className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors">
               Browse API Reference
             </a>
           </div>
-          <p className="text-white/50 text-sm mt-6">OpenAPI spec · Postman collection · GitHub examples</p>
         </div>
       </section>
     </>

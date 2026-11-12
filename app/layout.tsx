@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.popfab.io'),
   title: 'POPFAB — Payment Orchestration for African Businesses',
   icons: { icon: '/images/popfab-logo.png', apple: '/images/popfab-logo.png' },
   description:
