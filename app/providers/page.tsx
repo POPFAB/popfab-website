@@ -24,16 +24,16 @@ const providers = [
 export default function ProvidersPage() {
   return (
     <div className="bg-white text-[#10122a]">
-      <section className="border-b border-[#ececf2] bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-20">
+      <section className="story-reveal border-b border-[#ececf2] bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-20">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 md:grid-cols-[1.05fr_.95fr] md:items-end lg:px-10">
           <div><p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Provider network</p><h1 className="mt-5 max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-.045em] sm:text-6xl">Keep your provider choices. Simplify the connection.</h1></div>
           <div><p className="max-w-lg text-base leading-7 text-[#626477]">Connect the payment providers your business uses through a shared integration layer. Supported methods and access depend on your merchant setup.</p><Link href="https://developer.popfab.io" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#5051c7] hover:text-[#3435a5]">Explore the developer portal <span aria-hidden="true">→</span></Link></div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="story-reveal py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-10 flex min-h-48 flex-col justify-center gap-4 rounded-2xl bg-cover bg-center p-6 sm:flex-row sm:items-end sm:justify-between sm:p-8" style={{ backgroundImage: "linear-gradient(90deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.91) 46%, rgba(255,255,255,.58) 100%), url('/images/provider-payment-moment.png')" }}>
+          <div className="story-bg-drift mb-10 flex min-h-48 flex-col justify-center gap-4 rounded-2xl bg-cover bg-center p-6 sm:flex-row sm:items-end sm:justify-between sm:p-8" style={{ backgroundImage: "linear-gradient(90deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.91) 46%, rgba(255,255,255,.58) 100%), url('/images/provider-payment-moment.png')" }}>
             <div className="max-w-xl"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Connections</p><h2 className="mt-3 text-3xl font-semibold tracking-[-.035em]">Providers available through POPFAB</h2><p className="mt-3 max-w-md text-sm leading-6 text-[#77798a]">This is the current integration list. Availability for a specific merchant or payment method may vary.</p></div>
           </div>
           <div className="divide-y divide-[#ececf2] border-y border-[#ececf2]">
@@ -51,7 +51,7 @@ export default function ProvidersPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#ececf2] bg-[#fafafd] py-16 sm:py-20">
+      <section className="story-reveal border-y border-[#ececf2] bg-[#fafafd] py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 md:grid-cols-[.8fr_1.2fr] lg:px-10">
           <div><p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">One integration surface</p><h2 className="mt-4 max-w-md text-3xl font-semibold tracking-[-.035em]">Keep provider-specific work out of every checkout.</h2></div>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -63,7 +63,7 @@ export default function ProvidersPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="story-reveal py-16 sm:py-20">
         <div className="mx-auto flex max-w-7xl flex-col gap-7 px-5 sm:px-8 md:flex-row md:items-end md:justify-between lg:px-10">
           <div className="max-w-2xl"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Next step</p><h2 className="mt-4 text-3xl font-semibold tracking-[-.035em]">Check which connections fit your account.</h2><p className="mt-4 text-sm leading-6 text-[#6b6d7d]">Review the integration guide or contact POPFAB to discuss your provider requirements.</p></div>
           <div className="flex flex-wrap gap-3"><Link href="/pricing" className="rounded-xl border border-[#dfe0e9] px-5 py-3 text-sm font-semibold hover:border-[#5b5ce2]">View pricing</Link><a href="https://developer.popfab.io" className="rounded-xl bg-[#5b5ce2] px-5 py-3 text-sm font-semibold text-white hover:bg-[#4546c8]">Read the docs</a></div>

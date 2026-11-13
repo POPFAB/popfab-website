@@ -294,7 +294,7 @@ export default function DevelopersPage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-[#ececf2] bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-20" style={{ backgroundImage: "linear-gradient(rgba(247,247,251,.84), rgba(247,247,251,.88)), url('/images/developer-at-work.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="story-reveal border-b border-[#ececf2] bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-20" style={{ backgroundImage: "linear-gradient(rgba(247,247,251,.84), rgba(247,247,251,.88)), url('/images/developer-at-work.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -353,7 +353,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* Quick-start */}
-      <section id="docs" className="py-24 bg-white">
+      <section id="docs" className="story-reveal py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">Quick Start</span>
@@ -389,7 +389,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* SDK cards */}
-      <section className="py-20 bg-[#f8f9fb]">
+      <section className="story-reveal py-20 bg-[#f8f9fb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">SDKs</span>
@@ -425,7 +425,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* Developer experience callouts */}
-      <section className="py-20 bg-white">
+      <section className="story-reveal py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-[#4361ee] text-sm font-semibold uppercase tracking-wider">DX</span>
@@ -447,7 +447,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* Webhook tester */}
-      <section className="py-20 bg-[#0a0f1e]">
+      <section className="story-reveal py-20 bg-[#0a0f1e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -499,7 +499,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#4361ee]">
+      <section className="story-reveal py-20 bg-[#4361ee]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Your sandbox is waiting.
