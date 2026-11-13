@@ -19,7 +19,7 @@ const principles = [
 export default function AboutPage() {
   return (
     <div className="bg-white text-[#10122a]">
-      <section className="relative overflow-hidden bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-24">
+      <section className="story-reveal relative overflow-hidden bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-10">
           <div className="relative z-10">
             <p className="mb-5 text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">About POPFAB</p>
@@ -30,14 +30,14 @@ export default function AboutPage() {
               <Link href="/providers" className="rounded-xl border border-[#dfe0e9] bg-white px-5 py-3 text-sm font-semibold text-[#25263c] transition hover:border-[#5b5ce2]">Meet the providers</Link>
             </div>
           </div>
-          <div role="img" aria-label="Illustrative scene of African fintech colleagues discussing payment operations" className="relative aspect-[1.25] overflow-hidden rounded-[1.6rem] bg-[#e6e5ef] bg-cover bg-center shadow-[0_28px_70px_rgba(16,18,42,.13)]" style={{ backgroundImage: "url('/images/about-team.jpg')" }}>
+          <div role="img" aria-label="Illustrative scene of African fintech colleagues discussing payment operations" className="story-bg-drift relative aspect-[1.25] overflow-hidden rounded-[1.6rem] bg-[#e6e5ef] bg-cover bg-center shadow-[0_28px_70px_rgba(16,18,42,.13)]" style={{ backgroundImage: "url('/images/about-team.jpg')" }}>
             <div className="absolute inset-0 bg-[#10122a]/10" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#10122a]/70 to-transparent p-6 pt-16 text-sm font-medium text-white">Designed around the realities of African payments.</div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 sm:py-28">
+      <section className="story-reveal py-20 sm:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[.7fr_1.3fr] lg:px-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Why we’re here</p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#ececf2] bg-[#fafafd] py-20 sm:py-24">
+      <section className="story-reveal border-y border-[#ececf2] bg-[#fafafd] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="mb-12 max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">How we work</p>
@@ -67,7 +67,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-24">
+      <section className="story-reveal py-20 sm:py-24">
         <div className="mx-auto flex max-w-7xl flex-col gap-7 px-5 sm:px-8 md:flex-row md:items-end md:justify-between lg:px-10">
           <div className="max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">A better place to start</p>

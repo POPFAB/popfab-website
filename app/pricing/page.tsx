@@ -21,7 +21,7 @@ const included = ['Provider connections enabled for your account', 'Routing conf
 export default function PricingPage() {
   return (
     <div className="bg-white text-[#10122a]">
-      <section className="border-b border-[#ececf2] bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-20">
+      <section className="story-reveal border-b border-[#ececf2] bg-[#f7f7fb] pt-32 pb-16 sm:pt-40 sm:pb-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Pricing</p>
           <div className="mt-5 grid gap-8 md:grid-cols-[1.1fr_.9fr] md:items-end">
@@ -31,7 +31,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.84), rgba(255,255,255,.88)), url('/images/pricing-merchant.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="story-reveal py-16 sm:py-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.84), rgba(255,255,255,.88)), url('/images/pricing-merchant.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr]">
             <div>
@@ -55,7 +55,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#ececf2] bg-[#fafafd] py-16 sm:py-20">
+      <section className="story-reveal border-y border-[#ececf2] bg-[#fafafd] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="mb-9 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -80,7 +80,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="story-reveal py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 md:grid-cols-[.8fr_1.2fr] lg:px-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-[.16em] text-[#5b5ce2]">Included</p>
@@ -93,7 +93,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-[#10122a] py-16 text-white sm:py-20">
+      <section className="story-reveal bg-[#10122a] py-16 text-white sm:py-20">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 sm:px-8 md:flex-row md:items-end md:justify-between lg:px-10">
           <div className="max-w-2xl"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#a8a8ff]">Ready when you are</p><h2 className="mt-4 text-3xl font-semibold tracking-[-.035em] sm:text-4xl">Start in sandbox. Move at your pace.</h2><p className="mt-4 text-sm leading-6 text-white/60">Read the developer documentation or talk with our team about your payment setup.</p></div>
           <div className="flex flex-wrap gap-3"><a href="https://developer.popfab.io" className="rounded-xl bg-[#6a6bea] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#7979f5]">Open developer portal</a><Link href="/about" className="rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:bg-white/5">Contact POPFAB</Link></div>
