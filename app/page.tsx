@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CodeBlock from '@/components/CodeBlock';
 import PaymentStory from '@/components/PaymentStory';
+import YouTubeVideoModal from '@/components/YouTubeVideoModal';
 
 const providers = [
   { name: 'ALATPay', logo: '/images/alatpay.png' },
@@ -40,6 +41,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="https://developer.popfab.io" className="w-full rounded-xl bg-[#6a6bea] px-6 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#7979f5] sm:w-auto">Explore the developer portal</a>
               <Link href="#payment-journey" className="w-full rounded-xl border border-white/15 px-6 py-3.5 text-center text-sm font-semibold text-white/80 transition hover:border-white/40 hover:text-white sm:w-auto">Follow the payment journey</Link>
+              <YouTubeVideoModal autoOpen buttonLabel="Watch the POPFAB video" />
             </div>
             <Link href="#payment-journey" className="story-scroll-cue mt-14 inline-flex items-center gap-3 text-xs font-medium text-white/55">
               <span className="story-scroll-cue-icon" aria-hidden="true">↓</span> Scroll to follow a payment

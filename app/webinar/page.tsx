@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import YouTubeVideoModal from '@/components/YouTubeVideoModal';
 
 const registrationUrl = 'https://forms.gle/c6XfUbT4kPiUHbob6';
 const embeddedFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfqhrl_FkAZS7U5feuBAvRVdyNBkGHWLpX54IPBF2VFLCT8ZA/viewform?embedded=true';
@@ -77,6 +78,7 @@ export default function WebinarPage() {
                 Register for the webinar <ArrowIcon />
               </a>
               <a href="#what-youll-learn" className="inline-flex min-h-12 items-center justify-center rounded-full px-5 py-3 text-sm font-medium text-white/80 transition hover:text-white">See what you’ll learn <span className="ml-2">↓</span></a>
+              <YouTubeVideoModal buttonLabel="Watch the POPFAB video" />
             </div>
             <p className="mt-4 text-xs text-white/60">Register now. We’ll send the confirmed date, time, and joining link.</p>
           </div>
