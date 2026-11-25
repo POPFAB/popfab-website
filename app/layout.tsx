@@ -40,6 +40,10 @@ export default function RootLayout({
           __html: `window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-P6Z86LFQJP');`,
         }} />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-P6Z86LFQJP" strategy="afterInteractive" />
+        <Script id="google-tag-manager-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || []; window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});`,
+        }} />
+        <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-58X2P9V7" strategy="afterInteractive" />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
